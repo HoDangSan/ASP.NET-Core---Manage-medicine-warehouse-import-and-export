@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ScriptTablePatial"); }
+}
+@section CSS
+{
+    @{await Html.RenderPartialAsync("_StyleTablePatial"); }
+}
+
+<!-- Static Table Start -->
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Danh mục</h1>
+                            <div class="sparkline13-outline-icon">
+                                <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <span><i class="fa fa-wrench"></i></span>
+                                <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">    
+                            <div class="col-md-2" style="text-align: center; cursor: alias; height: 250px;">
+                                <a href="/ImportDrug">
+                                    <img src="~/img/category/nhapkho.jpg" width="200px" height="200px" alt="Nhập kho" style="padding: 20px; border-radius: 50%"/>
+                                    <h4>Nhập kho</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="text-align: center; cursor: alias;height: 250px;">
+                                <a href="/ExportDrug">
+                                    <img src="~/img/category/xuathang.png" width="200px" height="200px" alt="Xuất kho" style="padding: 20px;"/>
+                                    <h4>Xuất kho</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="text-align: center; cursor: alias;height: 250px;">
+                                <a href="/Liquidation">
+                                    <img src="~/img/category/thanhly.png" width="200px" height="200px" alt="Thanh lý" style="padding: 20px;"/>
+                                    <h4>Thanh lý</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="text-align: center; cursor: alias;height: 250px;">
+                                <a href="/Drug">
+                                    <img src="~/img/category/thuoc.png" width="200px" height="200px" alt="Quản lý thuốc" style="padding: 20px;"/>
+                                    <h4>Quản lý thuốc </h4>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="text-align: center; cursor: alias;height: 250px;">
+                                <a href="/Producer">
+                                    <img src="~/img/category/nhacungcap.jpg" width="200px" height="200px" alt="Nhà cung cấp" style="padding: 20px; border-radius: 50%"/>
+                                    <h4>Nhà cung cấp </h4>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="text-align: center; cursor: alias; height: 250px;">
+                                <a href="/StatisticalImport">
+                                    <img src="~/img/category/thongke1.png" width="200px" height="200px" alt="Thống kê Nhập" style="padding: 20px; "/>
+                                    <h4>Thống kê Nhập</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="text-align: center; cursor: alias;height: 250px;">
+                                <a href="/StatisticalExport">
+                                    <img src="~/img/category/thongke2.png" width="200px" height="200px" alt="Thống kê xuất" style="padding: 20px; border-radius: 50%"/>
+                                    <h4>Thống kê xuất </h4>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="text-align: center; cursor: alias;height: 250px;">
+                                <a href="/StatisticalLiquidation">
+                                    <img src="~/img/category/thongke3.jpg" width="200px" height="200px" alt="Thống kê thanh lý " style="padding: 20px; border-radius: 50%"/>
+                                    <h4>Thống kê thanh lý </h4>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="text-align: center; cursor: alias;height: 250px;">
+                                <a href="/ManageUser">
+                                    <img src="~/img/category/nguoi.jpg" width="200px" height="200px" alt="Quản lý người dùng" style="padding: 20px; border-radius: 50%"/>
+                                    <h4>Quản lý người dùng </h4>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="text-align: center; cursor: alias;height: 250px;">
+                                <a href="/#">
+                                    <img src="~/img/category/caidat.png" width="200px" height="200px" alt="Cài đặt " style="padding: 20px;"/>
+                                    <h4>Cài đặt </h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Static Table End -->

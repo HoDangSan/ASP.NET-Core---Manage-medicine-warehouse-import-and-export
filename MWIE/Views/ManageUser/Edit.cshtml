@@ -1,0 +1,87 @@
+﻿@model MWIE.Models.ViewModel.UserProfileViewModelEdit
+@{
+    ViewBag.Title = "Edit User";
+    Layout = "_Layout";
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ScriptTablePatial"); }
+}
+@section CSS
+{
+    @{await Html.RenderPartialAsync("_StyleTablePatial"); }
+}
+
+<!-- Static Table Start -->
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Quản lý <span class="table-project-n">người dùng</span></h1>
+                            <div class="sparkline13-outline-icon">
+                                <span><a style="color: black"><i class="fa fa-plus-square"></i></a></span>
+                                <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <span><i class="fa fa-wrench"></i></span>
+                                <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sparkline13-graph" style="text-align: left;width: 600px;margin: auto; margin-top: 20px;box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);">
+                    <h2 style="text-align: center">Chỉnh sửa người dùng</h2>
+                    <hr />
+                    <div class="datatable-dashv1-list custom-datatable-overright">
+                        <form asp-action="Edit">
+                            <input type="hidden" class="form-control" asp-for="Id">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label class="control-label">Họ</label>
+                                <input asp-for="FirstName" class="form-control"/>
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Tên</label>
+                                <input asp-for="LastName" class="form-control"/>
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Địa chỉ</label>
+                                <input asp-for="Address" class="form-control"/>
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Email</label>
+                                <input asp-for="Email" class="form-control"/>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="control-label">Điện thoại</label>
+                                <input asp-for="Phone" class="form-control"/>
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Giới tính</label>
+                                <input asp-for="Sex" class="form-control"/>
+                                <span asp-validation-for="Sex" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group" style="display: none">
+                                <label class="control-label">Trạng thái</label>
+                                <input asp-for="IsActive" class="form-control" style="width: 31px" checked/>
+                                <span asp-validation-for="IsActive" class="text-danger"></span>
+                            </div>
+                            <div class="form-group" style="width: 200px; margin-left: auto;">
+                                <input type="submit" value="Cập nhật" class="btn btn-primary"/>
+                                <a class="text-dark btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">Quay lại</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Static Table End -->

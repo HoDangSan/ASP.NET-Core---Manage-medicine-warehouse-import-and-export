@@ -1,0 +1,60 @@
+.receipt-left{
+	height: 250px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.receipt-left-text{
+	text-align: left;
+	font-size: 16px;
+	color: #303030;
+	font-weight: 400;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+.receipt-left-text input{
+	border-top:none;
+	border-left: none;
+	border-right: none;
+	width: 80%;
+}
+
+.receipt-right{
+	height: 250px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.receipt-right-text{
+	text-align: left;
+	font-size: 16px;
+	color: #303030;
+	font-weight: 400;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.receipt-right-text input{
+	border-top:none;
+	border-left: none;
+	border-right: none;
+	width: 70%;
+}
+
+#receipt-right-text-button{
+	margin-top: 40px;
+	margin-right: 10px;
+	text-align: right;
+}
+
+#receipt-right-text-button input{
+	width: 150px;
+}
+
+.add-drug{
+	text-align: left;
+	margin-top: 20px;
+}
+
+.add-drug input{
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+

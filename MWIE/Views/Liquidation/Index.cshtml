@@ -1,0 +1,167 @@
+﻿﻿@using MWIE.Models.Entity
+@model MWIE.Models.ViewModel.ImportDrugViewmodel
+@{
+    ViewBag.Title = "Thanh lý";
+    Layout = "_Layout";
+}
+@section CSS
+{
+    @{await Html.RenderPartialAsync("_StyleTableAndReceiptPatial"); }
+    <link href="~/select2/css/select2.min.css" rel="stylesheet" />
+}
+
+<div id="mess" class="modal-dialog" style="position: fixed; left: 400px; z-index: 1; display: none">    
+
+    <!-- Modal content-->
+    <div class="modal-content " >
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="text-align: center; color: red">Thông báo!!!</h4>
+        </div>
+        <div class="modal-body">
+            <p>Báo cáo đại ca đơn hàng đã được thanh lý thành công. Mời đại ca nhập đơn thanh lý hàng tiếp theo...</p>
+        </div>
+        <div class="modal-footer">
+            <button id="btnmess" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+
+</div>
+<div id="mess2" class="modal-dialog" style="position: fixed; left: 700px; z-index: 1; display: none; width: 150px; border: 2px solid black"> 
+</div>
+<!-- Static Table Start -->
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Thanh lý</h1>
+                            <div class="sparkline13-outline-icon">
+                                <span><a asp-action="" style="color: black"><i class="fa fa-plus-square"></i></a></span>
+                                <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <span><i class="fa fa-wrench"></i></span>
+                                <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <!-- Code vao day -->
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div id="fmUserProfile" class="col-md-7 receipt-left">
+                                        <div class="receipt-left-text">Nhân viên: <span><input id="userName" readonly type="text"></span></div>
+                                        <div class="receipt-left-text">Dịa chỉ: &emsp; &nbsp;<span><input id="userAddress" readonly type="text"></span></div>
+                                        <div class="receipt-left-text">Email: &emsp; &emsp;<span><input id="userEmail" readonly type="text"></span></div>
+                                        <div class="receipt-left-text">Giới tính: &emsp;<span><input id="userSex" readonly type="text"></span></div>
+                                        <div class="receipt-left-text">Điện thoại: <span><input id="userPhone" readonly type="text"></span></div>
+                                    </div>
+                                    <div class="col-md-5 receipt-right">
+                                        <div class="receipt-right-text" id="red">Số lô: &ensp;<span><input id="idReceipt" type="text" placeholder=" Nhập số lô"></span></div>
+                                        <div class="receipt-right-text">Ngày tạo: &emsp; &ensp;<span><input readonly id="dateCreate" type="text"></span></div>
+                                        <div class="receipt-right-text">Tổng giá: &emsp; &emsp;<span><input readonly id="totalPrice" type="text"></span></div>
+                                        <div id="receipt-right-text-button" class="receipt-right-text"><button  data-toggle="modal" data-target="#popupCreateReceiptMessage">Tạo hóa đơn</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="popup-drug" class="modal fade" role="dialog">
+                                <div class="modal-dialog" style="width:75%;">    
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h3 class="modal-title" style="font-size: 25px;font-weight:600">Thêm thuốc vào hóa đơn</h3>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="sparkline13-graph">    
+                                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                                    
+                                                    <table id="table1" class="ui celled table">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Tên thuốc</th>
+                                                            <th>Dơn vị</th>
+                                                            <th>Giá</th>
+                                                            <th>NSX</th>
+                                                            <th>HSD</th>
+                                                            <th>Nhóm</th>
+                                                            <th>Nhà cung cấp</th>
+                                                            <th>ID Nhóm</th>
+                                                            <th>ID Nhà cung cấp</th>
+                                                            <th></th>
+                                                        </tr>
+                                                        </thead>
+                                                    </table>
+                                                    <div id="messNumber" title="Điều chỉnh số lượng" class="modal-dialog" style="display: none; position: fixed; top: 20%; left: 40%; width: 300px; height: auto; padding: 3px; background-color: #f2f3f9; -ms-border-radius: 3px; border-radius: 3px; border: 1px solid gray; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);">
+                                                        <div style="background-color: rgb(225, 225, 225); padding: 5px"><b></b>
+                                                            <span id="close" style="border-radius: 3px; -ms-border-radius: 3px; width: 24px; color: #bb0202; position: absolute; cursor: pointer; right: 7px; top: 8px; background-color: #bdbcbc;">
+                                                                X
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-drug">
+                                <input type="button" id="btn-popup-drug" data-toggle="modal" data-target="#popup-drug" value="Thêm Thuốc vào hóa đơn"/>
+                            </div>
+
+                        <!-- Modal -->
+                        <div id="popupCreateReceiptMessage" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Đại Ca chú ý!</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Đại ca có muốn tạo hóa đơn này không?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="createReceiptImport"  type="button" class="btn btn-default" data-dismiss="modal">Có chứ</button> 
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Không</button> 
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <!-- Code vao day -->
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <table id="tableDetail" class="ui celled table" style="width: 98%; margin-left: auto">
+                            <thead>
+                            <tr>
+                                <th>Tên thuốc</th>
+                                <th>Đơn giá</th>
+                                <th>HSD</th>
+                                <th>Nhóm</th>
+                                <th>Nhà cung cấp</th>
+                                <th>Số lượng nhập</th>
+                                <th>Thành tiền</th>
+                                <th>Thêm</th>
+                            </tr>
+                            </thead>
+                        </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section ScriptsAJAX {
+    <script src="~/DataTables/datatables.min.js"></script>
+    <script src="~/select2/js/select2.min.js"></script>
+    <script src="~/js/Liquidation/liquidation.js"></script>
+}
+<!-- Static Table End -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ScriptTablePatial"); }
+    
+}

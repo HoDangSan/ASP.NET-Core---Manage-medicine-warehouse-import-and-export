@@ -1,0 +1,635 @@
+2019-12-25T17:21:18.6115462+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/   (ca22a1cb)
+2019-12-25T17:21:18.9526310+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.HomeController.Index (MWIE)"' (500cc934)
+2019-12-25T17:21:19.0106788+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "MWIE.Controllers.HomeController" ("MWIE"). (122b2fdf)
+2019-12-25T17:21:19.0653231+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] Authorization failed. (b15dd539)
+2019-12-25T17:21:19.0697378+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2019-12-25T17:21:19.0859576+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2019-12-25T17:21:19.1847226+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" was challenged. (d45f1f38)
+2019-12-25T17:21:19.1944830+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.HomeController.Index (MWIE)" in 173.1695ms (afa2e885)
+2019-12-25T17:21:19.2003319+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.HomeController.Index (MWIE)"' (99874f2b)
+2019-12-25T17:21:19.3208570+07:00 80000002-0001-fb00-b63f-84710c7967bb [INF] Request finished in 665.9926ms 302  (791a596a)
+2019-12-25T17:21:19.3458990+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Identity/Account/Login?ReturnUrl=%2F   (ca22a1cb)
+2019-12-25T17:21:19.3613959+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Executing endpoint '"Page: /Account/Login"' (500cc934)
+2019-12-25T17:21:19.5829517+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Login" (547e620f)
+2019-12-25T17:21:19.7207514+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Executing handler method "MWIE.Areas.Identity.Pages.Account.LoginModel.OnGetAsync" - ModelState is Valid (cd3ef7ec)
+2019-12-25T17:21:19.7929526+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2019-12-25T17:21:19.8001494+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Executed handler method "OnGetAsync", returned result "". (90fdc39c)
+2019-12-25T17:21:19.8143979+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Executing an implicit handler method - ModelState is Valid (232a55d1)
+2019-12-25T17:21:19.8168263+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Executed an implicit handler method, returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult". (f857da66)
+2019-12-25T17:21:20.3647563+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Executed page "/Account/Login" in 778.0597ms (02e01280)
+2019-12-25T17:21:20.3687728+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Executed endpoint '"Page: /Account/Login"' (99874f2b)
+2019-12-25T17:21:20.3857601+07:00 80000002-0000-fb00-b63f-84710c7967bb [INF] Request finished in 1041.9814ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:21:20.4492296+07:00 80000002-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/site.css   (ca22a1cb)
+2019-12-25T17:21:20.4551196+07:00 80000002-0002-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js   (ca22a1cb)
+2019-12-25T17:21:20.4582194+07:00 80000002-0002-f300-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Identity/lib/jquery-validation/dist/jquery.validate.js   (ca22a1cb)
+2019-12-25T17:21:20.4646302+07:00 80000002-0002-f400-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18   (ca22a1cb)
+2019-12-25T17:21:20.4800321+07:00 80000002-0002-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"'. Physical path: '"N/A"' (27b0a520)
+2019-12-25T17:21:20.4813578+07:00 80000002-0002-f300-b63f-84710c7967bb [INF] Sending file. Request path: '"/Identity/lib/jquery-validation/dist/jquery.validate.js"'. Physical path: '"N/A"' (27b0a520)
+2019-12-25T17:21:20.4972863+07:00 80000002-0002-f200-b63f-84710c7967bb [INF] Request finished in 43.9317ms 200 application/javascript (791a596a)
+2019-12-25T17:21:20.4972881+07:00 80000002-0002-f300-b63f-84710c7967bb [INF] Request finished in 45.2646ms 200 application/javascript (791a596a)
+2019-12-25T17:21:20.5037077+07:00 80000002-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/lib/bootstrap/dist/css/bootstrap.css   (ca22a1cb)
+2019-12-25T17:21:20.5068400+07:00 80000002-0002-f500-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/lib/bootstrap/dist/js/bootstrap.bundle.js   (ca22a1cb)
+2019-12-25T17:21:20.5120677+07:00 80000002-0002-f600-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/lib/jquery/dist/jquery.js   (ca22a1cb)
+2019-12-25T17:21:20.5185021+07:00 80000002-0002-f400-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/site.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\site.js"' (27b0a520)
+2019-12-25T17:21:20.6551775+07:00 80000002-0002-f400-b63f-84710c7967bb [INF] Request finished in 84.8093ms 200 application/javascript (791a596a)
+2019-12-25T17:21:20.6958026+07:00 80000002-0002-f700-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/site.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\site.css"' (27b0a520)
+2019-12-25T17:21:20.7505180+07:00 80000002-0002-f700-b63f-84710c7967bb [INF] Request finished in 259.6014ms 200 text/css (791a596a)
+2019-12-25T17:21:20.7637957+07:00 80000002-0002-f500-b63f-84710c7967bb [INF] Sending file. Request path: '"/lib/bootstrap/dist/js/bootstrap.bundle.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js"' (27b0a520)
+2019-12-25T17:21:20.7673843+07:00 80000002-0002-f600-b63f-84710c7967bb [INF] Sending file. Request path: '"/lib/jquery/dist/jquery.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\lib\jquery\dist\jquery.js"' (27b0a520)
+2019-12-25T17:21:20.7701469+07:00 80000002-0002-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\lib\bootstrap\dist\css\bootstrap.css"' (27b0a520)
+2019-12-25T17:21:20.7722903+07:00 80000002-0002-f600-b63f-84710c7967bb [INF] Request finished in 264.9493ms 200 application/javascript (791a596a)
+2019-12-25T17:21:20.7744375+07:00 80000002-0002-f500-b63f-84710c7967bb [INF] Request finished in 265.6441ms 200 application/javascript (791a596a)
+2019-12-25T17:21:20.7758475+07:00 80000002-0002-f800-b63f-84710c7967bb [INF] Request finished in 272.9046ms 200 text/css (791a596a)
+2019-12-25T17:21:21.5081640+07:00 80000004-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/favicon.ico   (ca22a1cb)
+2019-12-25T17:21:21.5180927+07:00 80000004-0000-fb00-b63f-84710c7967bb [INF] Request finished in 9.0308ms 404  (791a596a)
+2019-12-25T17:21:37.4926594+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Identity/Account/Register   (ca22a1cb)
+2019-12-25T17:21:37.5024976+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Executing endpoint '"Page: /Account/Register"' (500cc934)
+2019-12-25T17:21:37.5271062+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Route matched with "{page = \"/Account/Register\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Register" (547e620f)
+2019-12-25T17:21:37.5333693+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Executing handler method "MWIE.Areas.Identity.Pages.Account.RegisterModel.OnGet" - ModelState is Valid (cd3ef7ec)
+2019-12-25T17:21:37.5364899+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Executed handler method "OnGet", returned result "". (90fdc39c)
+2019-12-25T17:21:37.5385548+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Executing an implicit handler method - ModelState is Valid (232a55d1)
+2019-12-25T17:21:37.5407281+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Executed an implicit handler method, returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult". (f857da66)
+2019-12-25T17:21:37.6460318+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Executed page "/Account/Register" in 113.5419ms (02e01280)
+2019-12-25T17:21:37.6551433+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Executed endpoint '"Page: /Account/Register"' (99874f2b)
+2019-12-25T17:21:37.6588584+07:00 80000006-0000-fb00-b63f-84710c7967bb [INF] Request finished in 166.114ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:21:58.1036510+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44394/Identity/Account/Register application/x-www-form-urlencoded 323 (ca22a1cb)
+2019-12-25T17:21:58.1106224+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executing endpoint '"Page: /Account/Register"' (500cc934)
+2019-12-25T17:21:58.1125657+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Route matched with "{page = \"/Account/Register\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Register" (547e620f)
+2019-12-25T17:21:58.1580969+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executing handler method "MWIE.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync" - ModelState is Valid (cd3ef7ec)
+2019-12-25T17:21:58.1876620+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:21:58.1974981+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-12-25T17:21:58.2705387+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("67"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);" (0723d8ff)
+2019-12-25T17:21:58.2752663+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] User created a new account with password. (693a7015)
+2019-12-25T17:21:58.2808514+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-12-25T17:21:58.2870676+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserClaims] ([ClaimType], [ClaimValue], [UserId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetUserClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-12-25T17:21:58.2904650+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@p14='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p15='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13
+WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-12-25T17:21:58.3438763+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Profiles] ([Address], [Email], [FirstName], [IsActive], [LastName], [Phone], [Sex])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Profiles]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-12-25T17:21:58.3540602+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-12-25T17:21:58.3583282+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserClaims] ([ClaimType], [ClaimValue], [UserId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetUserClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-12-25T17:21:58.3616106+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@p14='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p15='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13
+WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-12-25T17:21:58.3665185+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-12-25T17:21:58.3714906+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserClaims] ([ClaimType], [ClaimValue], [UserId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [AspNetUserClaims]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-12-25T17:21:58.3745665+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@p14='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p15='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13
+WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-12-25T17:21:58.4433209+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("7"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-12-25T17:21:58.5143342+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-12-25T17:21:58.5322218+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-12-25T17:21:58.5394207+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed handler method "OnPostAsync", returned result "Microsoft.AspNetCore.Mvc.LocalRedirectResult". (90fdc39c)
+2019-12-25T17:21:58.5478030+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executing LocalRedirectResult, redirecting to "/". (cac120e6)
+2019-12-25T17:21:58.5535560+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed page "/Account/Register" in 439.1781ms (02e01280)
+2019-12-25T17:21:58.5569347+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed endpoint '"Page: /Account/Register"' (99874f2b)
+2019-12-25T17:21:58.5634804+07:00 80000004-0001-fb00-b63f-84710c7967bb [INF] Request finished in 460.672ms 302  (791a596a)
+2019-12-25T17:21:58.5696423+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/   (ca22a1cb)
+2019-12-25T17:21:58.5802660+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.HomeController.Index (MWIE)"' (500cc934)
+2019-12-25T17:21:58.5823004+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "MWIE.Controllers.HomeController" ("MWIE"). (122b2fdf)
+2019-12-25T17:21:58.5871008+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:21:58.5964907+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.HomeController.Index (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:21:58.6039968+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.HomeController.Index (MWIE)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7475ms. (50a9e262)
+2019-12-25T17:21:58.6369713+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-12-25T17:21:58.8738581+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Executed ViewResult - view "Index" executed in 260.0691ms. (f66409e9)
+2019-12-25T17:21:58.8788351+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.HomeController.Index (MWIE)" in 291.8702ms (afa2e885)
+2019-12-25T17:21:58.8808452+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.HomeController.Index (MWIE)"' (99874f2b)
+2019-12-25T17:21:58.8848730+07:00 80000006-0001-fb00-b63f-84710c7967bb [INF] Request finished in 313.422ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:21:58.9240361+07:00 80000008-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/bootstrap.min.css   (ca22a1cb)
+2019-12-25T17:21:58.9262137+07:00 80000002-0003-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/meanmenu.min.css   (ca22a1cb)
+2019-12-25T17:21:58.9287055+07:00 80000002-0003-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/animate.css   (ca22a1cb)
+2019-12-25T17:21:58.9299938+07:00 80000002-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/font-awesome.min.css   (ca22a1cb)
+2019-12-25T17:21:58.9548084+07:00 80000002-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/jquery.mCustomScrollbar.min.css   (ca22a1cb)
+2019-12-25T17:21:58.9568722+07:00 80000002-0001-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/adminpro-custon-icon.css   (ca22a1cb)
+2019-12-25T17:21:58.9591696+07:00 80000002-0001-f600-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/tabs.css   (ca22a1cb)
+2019-12-25T17:21:58.9624860+07:00 80000002-0001-f500-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/style.css   (ca22a1cb)
+2019-12-25T17:21:58.9665799+07:00 80000002-0001-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/jquery.mCustomScrollbar.min.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\jquery.mCustomScrollbar.min.css"' (27b0a520)
+2019-12-25T17:21:58.9686861+07:00 80000002-0001-f800-b63f-84710c7967bb [INF] Request finished in 14.9994ms 200 text/css (791a596a)
+2019-12-25T17:21:58.9718040+07:00 80000008-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/data-table/bootstrap-table.css   (ca22a1cb)
+2019-12-25T17:21:58.9822072+07:00 80000002-0001-f900-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/adminpro-custon-icon.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\adminpro-custon-icon.css"' (27b0a520)
+2019-12-25T17:21:58.9840057+07:00 80000002-0001-f900-b63f-84710c7967bb [INF] Request finished in 27.4038ms 200 text/css (791a596a)
+2019-12-25T17:21:58.9918637+07:00 80000004-0002-f500-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/data-table/bootstrap-editable.css   (ca22a1cb)
+2019-12-25T17:21:58.9997044+07:00 80000002-0001-f600-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/tabs.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\tabs.css"' (27b0a520)
+2019-12-25T17:21:59.0056381+07:00 80000002-0001-f600-b63f-84710c7967bb [INF] Request finished in 43.4072ms 200 text/css (791a596a)
+2019-12-25T17:21:59.0105740+07:00 80000008-0000-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/data-table/bootstrap-table.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\data-table\bootstrap-table.css"' (27b0a520)
+2019-12-25T17:21:59.0141441+07:00 80000002-0000-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/logo/logolayout.jpg   (ca22a1cb)
+2019-12-25T17:21:59.0176060+07:00 80000008-0000-fb00-b63f-84710c7967bb [INF] Request finished in 41.7873ms 200 text/css (791a596a)
+2019-12-25T17:21:59.0240269+07:00 80000004-0002-f500-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/data-table/bootstrap-editable.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\data-table\bootstrap-editable.css"' (27b0a520)
+2019-12-25T17:21:59.0274116+07:00 80000002-0001-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/normalize.css   (ca22a1cb)
+2019-12-25T17:21:59.0302501+07:00 80000004-0002-f500-b63f-84710c7967bb [INF] Request finished in 39.9254ms 200 text/css (791a596a)
+2019-12-25T17:21:59.0342171+07:00 80000002-0000-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/vendor/modernizr-2.8.3.min.js   (ca22a1cb)
+2019-12-25T17:21:59.0354665+07:00 80000002-0000-f900-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/logo/logolayout.jpg"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\logo\logolayout.jpg"' (27b0a520)
+2019-12-25T17:21:59.0383123+07:00 80000002-0000-f900-b63f-84710c7967bb [INF] Request finished in 29.728ms 200 image/jpeg (791a596a)
+2019-12-25T17:21:59.0414177+07:00 80000002-0000-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/message/1.jpg   (ca22a1cb)
+2019-12-25T17:21:59.0424740+07:00 80000002-0001-f400-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/css/responsive.css   (ca22a1cb)
+2019-12-25T17:21:59.0705621+07:00 80000002-0001-f700-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/normalize.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\normalize.css"' (27b0a520)
+2019-12-25T17:21:59.0786946+07:00 80000002-0000-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/message/1.jpg"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\message\1.jpg"' (27b0a520)
+2019-12-25T17:21:59.0795722+07:00 80000002-0001-f700-b63f-84710c7967bb [INF] Request finished in 52.9021ms 200 text/css (791a596a)
+2019-12-25T17:21:59.0823150+07:00 80000002-0000-f800-b63f-84710c7967bb [INF] Request finished in 40.2083ms 200 image/jpeg (791a596a)
+2019-12-25T17:21:59.0922523+07:00 80000002-0001-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/font-awesome.min.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\font-awesome.min.css"' (27b0a520)
+2019-12-25T17:21:59.1062112+07:00 80000002-0003-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/meanmenu.min.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\meanmenu.min.css"' (27b0a520)
+2019-12-25T17:21:59.1074432+07:00 80000002-0001-fa00-b63f-84710c7967bb [INF] Request finished in 172.1857ms 200 text/css (791a596a)
+2019-12-25T17:21:59.1228977+07:00 80000002-0001-f400-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/responsive.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\responsive.css"' (27b0a520)
+2019-12-25T17:21:59.2081380+07:00 80000002-0003-fb00-b63f-84710c7967bb [INF] Request finished in 187.1787ms 200 text/css (791a596a)
+2019-12-25T17:21:59.2118276+07:00 80000002-0003-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/animate.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\animate.css"' (27b0a520)
+2019-12-25T17:21:59.2149033+07:00 80000002-0001-f400-b63f-84710c7967bb [INF] Request finished in 84.3682ms 200 text/css (791a596a)
+2019-12-25T17:21:59.2188159+07:00 80000002-0003-fa00-b63f-84710c7967bb [INF] Request finished in 289.3978ms 200 text/css (791a596a)
+2019-12-25T17:21:59.2228978+07:00 80000004-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/bootstrap.min.js   (ca22a1cb)
+2019-12-25T17:21:59.2255619+07:00 80000002-0000-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/vendor/modernizr-2.8.3.min.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\vendor\modernizr-2.8.3.min.js"' (27b0a520)
+2019-12-25T17:21:59.2294474+07:00 80000002-0001-f500-b63f-84710c7967bb [INF] Sending file. Request path: '"/style.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\style.css"' (27b0a520)
+2019-12-25T17:21:59.2310869+07:00 80000002-0000-fa00-b63f-84710c7967bb [INF] Request finished in 195.2972ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.2406236+07:00 80000002-0001-f500-b63f-84710c7967bb [INF] Request finished in 268.8512ms 200 text/css (791a596a)
+2019-12-25T17:21:59.2536528+07:00 80000008-0001-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/bootstrap.min.css"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\css\bootstrap.min.css"' (27b0a520)
+2019-12-25T17:21:59.2563655+07:00 80000006-0002-f500-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/vendor/jquery-1.11.3.min.js   (ca22a1cb)
+2019-12-25T17:21:59.2579994+07:00 80000008-0001-fb00-b63f-84710c7967bb [INF] Request finished in 336.9262ms 200 text/css (791a596a)
+2019-12-25T17:21:59.3069432+07:00 80000004-0002-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/bootstrap.min.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\bootstrap.min.js"' (27b0a520)
+2019-12-25T17:21:59.3098947+07:00 80000004-0002-f800-b63f-84710c7967bb [INF] Request finished in 132.8515ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.3207071+07:00 80000004-0003-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/jquery.meanmenu.js   (ca22a1cb)
+2019-12-25T17:21:59.3486210+07:00 80000004-0003-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/jquery.meanmenu.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\jquery.meanmenu.js"' (27b0a520)
+2019-12-25T17:21:59.3564767+07:00 80000004-0003-fa00-b63f-84710c7967bb [INF] Request finished in 31.7855ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.3650625+07:00 8000000a-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/jquery.sticky.js   (ca22a1cb)
+2019-12-25T17:21:59.3911973+07:00 8000000a-0001-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/jquery.sticky.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\jquery.sticky.js"' (27b0a520)
+2019-12-25T17:21:59.3942151+07:00 8000000a-0001-fb00-b63f-84710c7967bb [INF] Request finished in 29.2594ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.4038146+07:00 80000006-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/jquery.mCustomScrollbar.concat.min.js   (ca22a1cb)
+2019-12-25T17:21:59.4089318+07:00 80000006-0002-f500-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/vendor/jquery-1.11.3.min.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\vendor\jquery-1.11.3.min.js"' (27b0a520)
+2019-12-25T17:21:59.4122932+07:00 80000006-0002-f500-b63f-84710c7967bb [INF] Request finished in 201.1374ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.4240561+07:00 8000000c-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/jquery.scrollUp.min.js   (ca22a1cb)
+2019-12-25T17:21:59.4427334+07:00 8000000c-0001-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/jquery.scrollUp.min.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\jquery.scrollUp.min.js"' (27b0a520)
+2019-12-25T17:21:59.4454086+07:00 8000000c-0001-fb00-b63f-84710c7967bb [INF] Request finished in 21.4168ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.4525790+07:00 8000000e-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/counterup/jquery.counterup.min.js   (ca22a1cb)
+2019-12-25T17:21:59.4682075+07:00 80000006-0002-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/jquery.mCustomScrollbar.concat.min.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\jquery.mCustomScrollbar.concat.min.js"' (27b0a520)
+2019-12-25T17:21:59.4722310+07:00 8000000e-0001-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/counterup/jquery.counterup.min.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\counterup\jquery.counterup.min.js"' (27b0a520)
+2019-12-25T17:21:59.4763533+07:00 80000006-0002-f800-b63f-84710c7967bb [INF] Request finished in 72.4519ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.4764686+07:00 8000000e-0001-fb00-b63f-84710c7967bb [INF] Request finished in 22.9968ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.4864330+07:00 80000008-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/counterup/waypoints.min.js   (ca22a1cb)
+2019-12-25T17:21:59.4864864+07:00 80000008-0002-f500-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/peity/jquery.peity.min.js   (ca22a1cb)
+2019-12-25T17:21:59.5158656+07:00 80000008-0002-f500-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/peity/jquery.peity.min.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\peity\jquery.peity.min.js"' (27b0a520)
+2019-12-25T17:21:59.5235255+07:00 80000008-0002-f500-b63f-84710c7967bb [INF] Request finished in 34.0841ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.5277508+07:00 80000008-0002-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/counterup/waypoints.min.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\counterup\waypoints.min.js"' (27b0a520)
+2019-12-25T17:21:59.5434144+07:00 80000008-0002-f800-b63f-84710c7967bb [INF] Request finished in 45.7089ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.5508970+07:00 80000004-0000-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/peity/peity-active.js   (ca22a1cb)
+2019-12-25T17:21:59.5562358+07:00 8000000a-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/sparkline/jquery.sparkline.min.js   (ca22a1cb)
+2019-12-25T17:21:59.5706624+07:00 80000004-0000-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/peity/peity-active.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\peity\peity-active.js"' (27b0a520)
+2019-12-25T17:21:59.5742968+07:00 80000004-0000-fa00-b63f-84710c7967bb [INF] Request finished in 27.1492ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.5812356+07:00 8000000a-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/sparkline/sparkline-active.js   (ca22a1cb)
+2019-12-25T17:21:59.5971627+07:00 8000000a-0002-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/sparkline/sparkline-active.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\sparkline\sparkline-active.js"' (27b0a520)
+2019-12-25T17:21:59.5995798+07:00 8000000a-0002-f800-b63f-84710c7967bb [INF] Request finished in 18.1337ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.6085413+07:00 8000000c-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/data-table/bootstrap-table.js   (ca22a1cb)
+2019-12-25T17:21:59.6176818+07:00 8000000a-0000-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/sparkline/jquery.sparkline.min.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\sparkline\jquery.sparkline.min.js"' (27b0a520)
+2019-12-25T17:21:59.6210126+07:00 8000000a-0000-fb00-b63f-84710c7967bb [INF] Request finished in 66.0799ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.6633896+07:00 8000000c-0002-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/data-table/bootstrap-table.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\data-table\bootstrap-table.js"' (27b0a520)
+2019-12-25T17:21:59.6686396+07:00 8000000c-0002-f800-b63f-84710c7967bb [INF] Request finished in 57.1351ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.6687513+07:00 80000010-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/data-table/tableExport.js   (ca22a1cb)
+2019-12-25T17:21:59.6786032+07:00 8000000e-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/data-table/data-table-active.js   (ca22a1cb)
+2019-12-25T17:21:59.6938300+07:00 8000000e-0002-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/data-table/data-table-active.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\data-table\data-table-active.js"' (27b0a520)
+2019-12-25T17:21:59.6963729+07:00 8000000e-0002-f800-b63f-84710c7967bb [INF] Request finished in 17.93ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.7041632+07:00 80000006-0003-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/data-table/bootstrap-table-editable.js   (ca22a1cb)
+2019-12-25T17:21:59.7245097+07:00 80000006-0003-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/data-table/bootstrap-table-editable.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\data-table\bootstrap-table-editable.js"' (27b0a520)
+2019-12-25T17:21:59.7277489+07:00 80000006-0003-fa00-b63f-84710c7967bb [INF] Request finished in 23.2497ms 200 application/javascript (791a596a)
+2019-12-25T17:21:59.7427417+07:00 80000008-0003-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/data-table/bootstrap-editable.js   (ca22a1cb)
+2019-12-25T17:21:59.7881712+07:00 80000010-0001-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/data-table/tableExport.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\data-table\tableExport.js"' (27b0a520)
+2019-12-25T17:21:59.7917037+07:00 80000010-0001-fb00-b63f-84710c7967bb [INF] Request finished in 123.5895ms 200 application/javascript (791a596a)
+2019-12-25T17:22:00.0579714+07:00 8000000c-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/data-table/bootstrap-table-resizable.js   (ca22a1cb)
+2019-12-25T17:22:00.0872847+07:00 80000004-0000-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/data-table/bootstrap-table-export.js   (ca22a1cb)
+2019-12-25T17:22:00.0916912+07:00 80000006-0000-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/data-table/colResizable-1.5.source.js   (ca22a1cb)
+2019-12-25T17:22:00.1109779+07:00 80000012-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/js/main.js   (ca22a1cb)
+2019-12-25T17:22:00.1226330+07:00 80000004-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/thanhly.png   (ca22a1cb)
+2019-12-25T17:22:00.1357783+07:00 80000004-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/nhacungcap.jpg   (ca22a1cb)
+2019-12-25T17:22:00.1412453+07:00 80000004-0001-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/thuoc.png   (ca22a1cb)
+2019-12-25T17:22:00.1633286+07:00 80000004-0001-f600-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/thongke1.png   (ca22a1cb)
+2019-12-25T17:22:00.1863208+07:00 80000004-0001-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/thongke2.png   (ca22a1cb)
+2019-12-25T17:22:00.2132555+07:00 80000008-0003-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/data-table/bootstrap-editable.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\data-table\bootstrap-editable.js"' (27b0a520)
+2019-12-25T17:22:00.2175953+07:00 80000004-0000-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/fonts/fontawesome-webfont.woff2?v=4.5.0   (ca22a1cb)
+2019-12-25T17:22:00.2247329+07:00 80000004-0000-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/data-table/bootstrap-table-export.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\data-table\bootstrap-table-export.js"' (27b0a520)
+2019-12-25T17:22:00.2293845+07:00 80000010-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/fonts/adminpro-icon.ttf?4gzvyg   (ca22a1cb)
+2019-12-25T17:22:00.2412167+07:00 80000004-0000-f800-b63f-84710c7967bb [INF] Request finished in 256.8311ms 200 application/javascript (791a596a)
+2019-12-25T17:22:00.2467940+07:00 80000012-0001-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/main.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\main.js"' (27b0a520)
+2019-12-25T17:22:00.2527106+07:00 80000004-0001-f900-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/thongke2.png"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\thongke2.png"' (27b0a520)
+2019-12-25T17:22:00.2647484+07:00 80000012-0001-fb00-b63f-84710c7967bb [INF] Request finished in 274.3539ms 200 application/javascript (791a596a)
+2019-12-25T17:22:00.2689984+07:00 80000004-0001-f900-b63f-84710c7967bb [INF] Request finished in 196.9532ms 200 image/png (791a596a)
+2019-12-25T17:22:00.2764253+07:00 80000004-0000-f900-b63f-84710c7967bb [INF] Sending file. Request path: '"/fonts/fontawesome-webfont.woff2"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\fonts\fontawesome-webfont.woff2"' (27b0a520)
+2019-12-25T17:22:00.2780967+07:00 80000004-0001-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/nhacungcap.jpg"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\nhacungcap.jpg"' (27b0a520)
+2019-12-25T17:22:00.2821533+07:00 80000004-0000-f900-b63f-84710c7967bb [INF] Request finished in 100.5685ms 200 font/woff2 (791a596a)
+2019-12-25T17:22:00.2851961+07:00 80000004-0001-fa00-b63f-84710c7967bb [INF] Request finished in 306.6489ms 200 image/jpeg (791a596a)
+2019-12-25T17:22:00.2881146+07:00 80000004-0001-f600-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/thongke1.png"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\thongke1.png"' (27b0a520)
+2019-12-25T17:22:00.2920722+07:00 80000010-0002-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/fonts/adminpro-icon.ttf"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\fonts\adminpro-icon.ttf"' (27b0a520)
+2019-12-25T17:22:00.2937752+07:00 80000004-0001-f600-b63f-84710c7967bb [INF] Request finished in 211.8135ms 200 image/png (791a596a)
+2019-12-25T17:22:00.2976200+07:00 80000010-0002-f800-b63f-84710c7967bb [INF] Request finished in 97.9159ms 200 application/x-font-ttf (791a596a)
+2019-12-25T17:22:00.3007885+07:00 80000004-0001-f700-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/thuoc.png"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\thuoc.png"' (27b0a520)
+2019-12-25T17:22:00.3076193+07:00 80000006-0000-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/data-table/colResizable-1.5.source.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\data-table\colResizable-1.5.source.js"' (27b0a520)
+2019-12-25T17:22:00.3147870+07:00 80000004-0001-f700-b63f-84710c7967bb [INF] Request finished in 325.8723ms 200 image/png (791a596a)
+2019-12-25T17:22:00.3201670+07:00 80000006-0000-fa00-b63f-84710c7967bb [INF] Request finished in 339.7604ms 200 application/javascript (791a596a)
+2019-12-25T17:22:00.3312576+07:00 80000002-0001-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/nguoi.jpg   (ca22a1cb)
+2019-12-25T17:22:00.3356188+07:00 80000002-0001-f300-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/thongke3.jpg   (ca22a1cb)
+2019-12-25T17:22:00.3400515+07:00 80000004-0001-f500-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/nhapkho.jpg   (ca22a1cb)
+2019-12-25T17:22:00.3501437+07:00 80000002-0001-f100-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/caidat.png   (ca22a1cb)
+2019-12-25T17:22:00.3591505+07:00 80000004-0001-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/thanhly.png"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\thanhly.png"' (27b0a520)
+2019-12-25T17:22:00.3642773+07:00 80000004-0001-f400-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/category/xuathang.png   (ca22a1cb)
+2019-12-25T17:22:00.3728758+07:00 80000002-0001-f300-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/thongke3.jpg"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\thongke3.jpg"' (27b0a520)
+2019-12-25T17:22:00.3757558+07:00 80000004-0001-f500-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/nhapkho.jpg"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\nhapkho.jpg"' (27b0a520)
+2019-12-25T17:22:00.3793348+07:00 80000002-0001-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/nguoi.jpg"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\nguoi.jpg"' (27b0a520)
+2019-12-25T17:22:00.3811596+07:00 80000004-0001-f400-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/xuathang.png"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\xuathang.png"' (27b0a520)
+2019-12-25T17:22:00.3854636+07:00 80000004-0001-f500-b63f-84710c7967bb [INF] Request finished in 298.2283ms 200 image/jpeg (791a596a)
+2019-12-25T17:22:00.3888880+07:00 80000002-0001-f200-b63f-84710c7967bb [INF] Request finished in 385.3713ms 200 image/jpeg (791a596a)
+2019-12-25T17:22:00.3914206+07:00 80000002-0001-f300-b63f-84710c7967bb [INF] Request finished in 317.0971ms 200 image/jpeg (791a596a)
+2019-12-25T17:22:00.3965776+07:00 80000002-0001-f100-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/category/caidat.png"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\category\caidat.png"' (27b0a520)
+2019-12-25T17:22:00.4088193+07:00 80000004-0001-f400-b63f-84710c7967bb [INF] Request finished in 325.0582ms 200 image/png (791a596a)
+2019-12-25T17:22:00.4179676+07:00 80000002-0001-f100-b63f-84710c7967bb [INF] Request finished in 319.0581ms 200 image/png (791a596a)
+2019-12-25T17:22:00.4293853+07:00 80000004-0001-f800-b63f-84710c7967bb [INF] Request finished in 386.5711ms 200 image/png (791a596a)
+2019-12-25T17:22:00.4327144+07:00 80000008-0003-fa00-b63f-84710c7967bb [INF] Request finished in 475.0564ms 200 application/javascript (791a596a)
+2019-12-25T17:22:00.4531042+07:00 8000000c-0000-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/js/data-table/bootstrap-table-resizable.js"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\js\data-table\bootstrap-table-resizable.js"' (27b0a520)
+2019-12-25T17:22:00.4675191+07:00 8000000c-0000-fb00-b63f-84710c7967bb [INF] Request finished in 528.2366ms 200 application/javascript (791a596a)
+2019-12-25T17:22:00.5122016+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/ManageUser/GetUser   (ca22a1cb)
+2019-12-25T17:22:00.5181992+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (500cc934)
+2019-12-25T17:22:00.5253198+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetUser\", controller = \"ManageUser\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.JsonResult GetUser()" on controller "MWIE.Controllers.ManageUserController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:00.5318839+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:00.5365635+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:00.5463694+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:22:00.5810210+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[FirstName], [e].[IsActive], [e].[LastName], [e].[Phone], [e].[Sex]
+FROM [Profiles] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:22:00.6005324+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 60.621ms. (50a9e262)
+2019-12-25T17:22:00.6082820+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Executing JsonResult, writing value of type '"<>f__AnonymousType3`1[[MWIE.Models.Entity.UserProfile, MWIE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (2f513669)
+2019-12-25T17:22:00.6968698+07:00 80000006-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/img/favicon.ico   (ca22a1cb)
+2019-12-25T17:22:00.7297096+07:00 80000006-0001-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/img/favicon.ico"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\img\favicon.ico"' (27b0a520)
+2019-12-25T17:22:00.7336441+07:00 80000006-0001-f800-b63f-84710c7967bb [INF] Request finished in 42.1211ms 200 image/x-icon (791a596a)
+2019-12-25T17:22:00.8330880+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ManageUserController.GetUser (MWIE)" in 305.1706ms (afa2e885)
+2019-12-25T17:22:00.8357531+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (99874f2b)
+2019-12-25T17:22:00.8381591+07:00 8000000a-0003-fa00-b63f-84710c7967bb [INF] Request finished in 330.2311ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-25T17:22:20.8341727+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Drug   (ca22a1cb)
+2019-12-25T17:22:20.8384222+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.DrugController.Index (MWIE)"' (500cc934)
+2019-12-25T17:22:20.8429329+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Drug\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ViewResult Index()" on controller "MWIE.Controllers.DrugController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:20.8454586+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:20.8497188+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.DrugController.Index (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:20.8556531+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:22:20.9134909+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Amount], [d].[DateOfManufacture], [d].[ExpriryDate], [d].[GroupDrugId], [d].[IsActive], [d].[Name], [d].[Price], [d].[ProducerId], [d].[Unit]
+FROM [Drugs] AS [d]" (0723d8ff)
+2019-12-25T17:22:20.9184198+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.DrugController.Index (MWIE)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 66.4089ms. (50a9e262)
+2019-12-25T17:22:20.9304342+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-12-25T17:22:21.0355438+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Executed ViewResult - view "Index" executed in 112.9584ms. (f66409e9)
+2019-12-25T17:22:21.0412819+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.DrugController.Index (MWIE)" in 192.9785ms (afa2e885)
+2019-12-25T17:22:21.0446152+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.DrugController.Index (MWIE)"' (99874f2b)
+2019-12-25T17:22:21.0507800+07:00 8000000e-0000-fb00-b63f-84710c7967bb [INF] Request finished in 214.4862ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:22:21.5526016+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/ManageUser/GetUser   (ca22a1cb)
+2019-12-25T17:22:21.5607600+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (500cc934)
+2019-12-25T17:22:21.5636884+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetUser\", controller = \"ManageUser\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.JsonResult GetUser()" on controller "MWIE.Controllers.ManageUserController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:21.5674114+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:21.5704322+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:21.5747194+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:22:21.5795863+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[FirstName], [e].[IsActive], [e].[LastName], [e].[Phone], [e].[Sex]
+FROM [Profiles] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:22:21.5830117+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 9.8511ms. (50a9e262)
+2019-12-25T17:22:21.5891768+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Executing JsonResult, writing value of type '"<>f__AnonymousType3`1[[MWIE.Models.Entity.UserProfile, MWIE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (2f513669)
+2019-12-25T17:22:21.5939860+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ManageUserController.GetUser (MWIE)" in 26.601ms (afa2e885)
+2019-12-25T17:22:21.6296061+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (99874f2b)
+2019-12-25T17:22:21.6356329+07:00 8000000c-0003-fa00-b63f-84710c7967bb [INF] Request finished in 82.0344ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-25T17:22:21.6397808+07:00 80000010-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/fonts/glyphicons-halflings-regular.woff2   (ca22a1cb)
+2019-12-25T17:22:21.6835819+07:00 80000010-0000-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/fonts/glyphicons-halflings-regular.woff2"'. Physical path: '"E:\ASP.NET CORE - Project\manage-medicine-warehouse-import-and-export\MWIE\wwwroot\fonts\glyphicons-halflings-regular.woff2"' (27b0a520)
+2019-12-25T17:22:21.6880058+07:00 80000010-0000-fb00-b63f-84710c7967bb [INF] Request finished in 51.3638ms 200 font/woff2 (791a596a)
+2019-12-25T17:22:37.7516837+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Producer   (ca22a1cb)
+2019-12-25T17:22:37.7550303+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ProducerController.Index (MWIE)"' (500cc934)
+2019-12-25T17:22:37.7601791+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Producer\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ViewResult Index()" on controller "MWIE.Controllers.ProducerController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:37.7657342+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:37.7685415+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ProducerController.Index (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:37.7724234+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:22:37.7972658+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Address], [p].[Email], [p].[IsActive], [p].[Name], [p].[Phone]
+FROM [Producers] AS [p]" (0723d8ff)
+2019-12-25T17:22:37.8011419+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ProducerController.Index (MWIE)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 30.728ms. (50a9e262)
+2019-12-25T17:22:37.8104292+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-12-25T17:22:37.9403660+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Executed ViewResult - view "Index" executed in 132.9388ms. (f66409e9)
+2019-12-25T17:22:37.9472003+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ProducerController.Index (MWIE)" in 180.3823ms (afa2e885)
+2019-12-25T17:22:37.9521233+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ProducerController.Index (MWIE)"' (99874f2b)
+2019-12-25T17:22:37.9551641+07:00 80000012-0002-f800-b63f-84710c7967bb [INF] Request finished in 203.6553ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:22:38.3233996+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/ManageUser/GetUser   (ca22a1cb)
+2019-12-25T17:22:38.3418146+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (500cc934)
+2019-12-25T17:22:38.3542334+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"GetUser\", controller = \"ManageUser\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.JsonResult GetUser()" on controller "MWIE.Controllers.ManageUserController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:38.3577507+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:38.3608374+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:38.3661412+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:22:38.3700908+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[FirstName], [e].[IsActive], [e].[LastName], [e].[Phone], [e].[Sex]
+FROM [Profiles] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:22:38.3727950+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 9.4683ms. (50a9e262)
+2019-12-25T17:22:38.3767935+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Executing JsonResult, writing value of type '"<>f__AnonymousType3`1[[MWIE.Models.Entity.UserProfile, MWIE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (2f513669)
+2019-12-25T17:22:38.3817889+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ManageUserController.GetUser (MWIE)" in 22.8577ms (afa2e885)
+2019-12-25T17:22:38.3869438+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (99874f2b)
+2019-12-25T17:22:38.3901353+07:00 80000014-0002-f800-b63f-84710c7967bb [INF] Request finished in 68.1514ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-25T17:22:43.1130513+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Producer/Create   (ca22a1cb)
+2019-12-25T17:22:43.1170459+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ProducerController.Create (MWIE)"' (500cc934)
+2019-12-25T17:22:43.1217029+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"Create\", controller = \"Producer\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Create()" on controller "MWIE.Controllers.ProducerController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:43.1254629+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:43.1276616+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ProducerController.Create (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:43.1300483+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ProducerController.Create (MWIE)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.4018ms. (50a9e262)
+2019-12-25T17:22:43.1351335+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Executing ViewResult, running view "Create". (c83d0e25)
+2019-12-25T17:22:43.2450833+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Executed ViewResult - view "Create" executed in 112.5063ms. (f66409e9)
+2019-12-25T17:22:43.2488129+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ProducerController.Create (MWIE)" in 123.2594ms (afa2e885)
+2019-12-25T17:22:43.2558893+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ProducerController.Create (MWIE)"' (99874f2b)
+2019-12-25T17:22:43.2643085+07:00 80000008-0001-f800-b63f-84710c7967bb [INF] Request finished in 146.0347ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:22:43.3189143+07:00 80000012-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Producer/css/normalize.css   (ca22a1cb)
+2019-12-25T17:22:43.3319585+07:00 80000012-0000-fb00-b63f-84710c7967bb [INF] Request finished in 14.4865ms 404  (791a596a)
+2019-12-25T17:22:43.5462699+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/ManageUser/GetUser   (ca22a1cb)
+2019-12-25T17:22:43.5569453+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (500cc934)
+2019-12-25T17:22:43.5693700+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"GetUser\", controller = \"ManageUser\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.JsonResult GetUser()" on controller "MWIE.Controllers.ManageUserController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:43.5726841+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:43.5780790+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:43.5895255+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:22:43.5988591+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[FirstName], [e].[IsActive], [e].[LastName], [e].[Phone], [e].[Sex]
+FROM [Profiles] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:22:43.6030427+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 21.0336ms. (50a9e262)
+2019-12-25T17:22:43.6065192+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Executing JsonResult, writing value of type '"<>f__AnonymousType3`1[[MWIE.Models.Entity.UserProfile, MWIE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (2f513669)
+2019-12-25T17:22:43.6160701+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ManageUserController.GetUser (MWIE)" in 37.8683ms (afa2e885)
+2019-12-25T17:22:43.6203153+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (99874f2b)
+2019-12-25T17:22:43.6230653+07:00 80000016-0002-f800-b63f-84710c7967bb [INF] Request finished in 76.8733ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-25T17:22:54.7430400+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44394/Producer/Create application/x-www-form-urlencoded 374 (ca22a1cb)
+2019-12-25T17:22:54.7460499+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ProducerController.Create (MWIE)"' (500cc934)
+2019-12-25T17:22:54.7623270+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"Create\", controller = \"Producer\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Create(MWIE.Models.ViewModel.ProducerViewModelEdit)" on controller "MWIE.Controllers.ProducerController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:54.7643174+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:54.7761639+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ProducerController.Create (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:54.7919181+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:22:54.8164081+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (Size = 4000), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Producers] ([Address], [Email], [IsActive], [Name], [Phone])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Producers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-12-25T17:22:54.8222234+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ProducerController.Create (MWIE)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 44.4061ms. (50a9e262)
+2019-12-25T17:22:54.8246015+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Executing RedirectResult, redirecting to "/Producer". (d98d540e)
+2019-12-25T17:22:54.8267077+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ProducerController.Create (MWIE)" in 62.391ms (afa2e885)
+2019-12-25T17:22:54.8284939+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ProducerController.Create (MWIE)"' (99874f2b)
+2019-12-25T17:22:54.8314560+07:00 80000014-0000-fb00-b63f-84710c7967bb [INF] Request finished in 87.9667ms 302  (791a596a)
+2019-12-25T17:22:54.8409014+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Producer   (ca22a1cb)
+2019-12-25T17:22:54.8432711+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ProducerController.Index (MWIE)"' (500cc934)
+2019-12-25T17:22:54.8453878+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Producer\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ViewResult Index()" on controller "MWIE.Controllers.ProducerController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:54.8472349+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:54.8490795+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ProducerController.Index (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:54.8514556+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:22:54.8554704+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Address], [p].[Email], [p].[IsActive], [p].[Name], [p].[Phone]
+FROM [Producers] AS [p]" (0723d8ff)
+2019-12-25T17:22:54.8586707+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ProducerController.Index (MWIE)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 7.8723ms. (50a9e262)
+2019-12-25T17:22:54.8605051+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-12-25T17:22:54.8756624+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Executed ViewResult - view "Index" executed in 14.957ms. (f66409e9)
+2019-12-25T17:22:54.8788404+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ProducerController.Index (MWIE)" in 30.2929ms (afa2e885)
+2019-12-25T17:22:54.8812902+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ProducerController.Index (MWIE)"' (99874f2b)
+2019-12-25T17:22:54.8849733+07:00 8000000a-0001-f800-b63f-84710c7967bb [INF] Request finished in 42.6599ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:22:55.2610841+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/ManageUser/GetUser   (ca22a1cb)
+2019-12-25T17:22:55.2643902+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (500cc934)
+2019-12-25T17:22:55.2688718+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"GetUser\", controller = \"ManageUser\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.JsonResult GetUser()" on controller "MWIE.Controllers.ManageUserController" ("MWIE"). (122b2fdf)
+2019-12-25T17:22:55.2730366+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:22:55.2754401+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:22:55.2913863+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:22:55.2965364+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[FirstName], [e].[IsActive], [e].[LastName], [e].[Phone], [e].[Sex]
+FROM [Profiles] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:22:55.2996255+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 21.3669ms. (50a9e262)
+2019-12-25T17:22:55.3046758+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Executing JsonResult, writing value of type '"<>f__AnonymousType3`1[[MWIE.Models.Entity.UserProfile, MWIE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (2f513669)
+2019-12-25T17:22:55.3076872+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ManageUserController.GetUser (MWIE)" in 36.0716ms (afa2e885)
+2019-12-25T17:22:55.3105909+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (99874f2b)
+2019-12-25T17:22:55.3137605+07:00 8000000c-0001-f800-b63f-84710c7967bb [INF] Request finished in 53.4773ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-25T17:31:19.5437700+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/   (ca22a1cb)
+2019-12-25T17:31:19.6216393+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] "Identity.Application" was not authenticated. Failure message: "Ticket expired" (48071232)
+2019-12-25T17:31:19.6787523+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.HomeController.Index (MWIE)"' (500cc934)
+2019-12-25T17:31:19.7009871+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "MWIE.Controllers.HomeController" ("MWIE"). (122b2fdf)
+2019-12-25T17:31:19.7212129+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] Authorization failed. (b15dd539)
+2019-12-25T17:31:19.7244672+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2019-12-25T17:31:19.7346180+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2019-12-25T17:31:19.7439561+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" was challenged. (d45f1f38)
+2019-12-25T17:31:19.7507396+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.HomeController.Index (MWIE)" in 43.0157ms (afa2e885)
+2019-12-25T17:31:19.7531734+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.HomeController.Index (MWIE)"' (99874f2b)
+2019-12-25T17:31:19.7779813+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Identity/Account/Login?ReturnUrl=%2F   (ca22a1cb)
+2019-12-25T17:31:19.7836715+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] "Identity.Application" was not authenticated. Failure message: "Ticket expired" (48071232)
+2019-12-25T17:31:19.7926270+07:00 80000002-0003-f900-b63f-84710c7967bb [INF] Request finished in 254.0894ms 302  (791a596a)
+2019-12-25T17:31:19.7972261+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Executing endpoint '"Page: /Account/Login"' (500cc934)
+2019-12-25T17:31:19.8831642+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Login" (547e620f)
+2019-12-25T17:31:19.9421996+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Executing handler method "MWIE.Areas.Identity.Pages.Account.LoginModel.OnGetAsync" - ModelState is Valid (cd3ef7ec)
+2019-12-25T17:31:19.9589895+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2019-12-25T17:31:19.9647899+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Executed handler method "OnGetAsync", returned result "". (90fdc39c)
+2019-12-25T17:31:19.9714239+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Executing an implicit handler method - ModelState is Valid (232a55d1)
+2019-12-25T17:31:19.9739855+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Executed an implicit handler method, returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult". (f857da66)
+2019-12-25T17:31:20.2754062+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Executed page "/Account/Login" in 390.2207ms (02e01280)
+2019-12-25T17:31:20.2779653+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Executed endpoint '"Page: /Account/Login"' (99874f2b)
+2019-12-25T17:31:20.2866139+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Request finished in 509.5441ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:31:24.0620327+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44394/Identity/Account/Login?ReturnUrl=%2F application/x-www-form-urlencoded 277 (ca22a1cb)
+2019-12-25T17:31:24.0652054+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] "Identity.Application" was not authenticated. Failure message: "Ticket expired" (48071232)
+2019-12-25T17:31:24.0816722+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Executing endpoint '"Page: /Account/Login"' (500cc934)
+2019-12-25T17:31:24.0847474+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Login" (547e620f)
+2019-12-25T17:31:24.1424307+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Executing handler method "MWIE.Areas.Identity.Pages.Account.LoginModel.OnPostAsync" - ModelState is Valid (cd3ef7ec)
+2019-12-25T17:31:24.1668889+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:31:24.2273016+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Executed DbCommand ("6"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-12-25T17:31:24.3250297+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-12-25T17:31:24.3946649+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-12-25T17:31:24.4149672+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-12-25T17:31:24.4210399+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] User logged in. (fdce0db4)
+2019-12-25T17:31:24.4279773+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Executed handler method "OnPostAsync", returned result "Microsoft.AspNetCore.Mvc.LocalRedirectResult". (90fdc39c)
+2019-12-25T17:31:24.4367958+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Executing LocalRedirectResult, redirecting to "/". (cac120e6)
+2019-12-25T17:31:24.4419282+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Executed page "/Account/Login" in 355.3745ms (02e01280)
+2019-12-25T17:31:24.4451925+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Executed endpoint '"Page: /Account/Login"' (99874f2b)
+2019-12-25T17:31:24.4543040+07:00 80000018-0002-f800-b63f-84710c7967bb [INF] Request finished in 393.6632ms 302  (791a596a)
+2019-12-25T17:31:24.4646534+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/   (ca22a1cb)
+2019-12-25T17:31:24.4771876+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.HomeController.Index (MWIE)"' (500cc934)
+2019-12-25T17:31:24.4793129+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "MWIE.Controllers.HomeController" ("MWIE"). (122b2fdf)
+2019-12-25T17:31:24.4823216+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:31:24.4925935+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.HomeController.Index (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:31:24.4998062+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.HomeController.Index (MWIE)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.745ms. (50a9e262)
+2019-12-25T17:31:24.5190247+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-12-25T17:31:24.7212597+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Executed ViewResult - view "Index" executed in 214.4765ms. (f66409e9)
+2019-12-25T17:31:24.7242277+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.HomeController.Index (MWIE)" in 242.4254ms (afa2e885)
+2019-12-25T17:31:24.7269479+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.HomeController.Index (MWIE)"' (99874f2b)
+2019-12-25T17:31:24.7324476+07:00 80000003-0000-fd00-b63f-84710c7967bb [INF] Request finished in 264.4176ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:31:25.3400451+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/ManageUser/GetUser   (ca22a1cb)
+2019-12-25T17:31:25.3448890+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (500cc934)
+2019-12-25T17:31:25.3500435+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"GetUser\", controller = \"ManageUser\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.JsonResult GetUser()" on controller "MWIE.Controllers.ManageUserController" ("MWIE"). (122b2fdf)
+2019-12-25T17:31:25.3525059+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:31:25.3603770+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:31:25.3669004+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:31:25.4149955+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[FirstName], [e].[IsActive], [e].[LastName], [e].[Phone], [e].[Sex]
+FROM [Profiles] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:25.5239362+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 148.5594ms. (50a9e262)
+2019-12-25T17:31:25.5667562+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Executing JsonResult, writing value of type '"<>f__AnonymousType3`1[[MWIE.Models.Entity.UserProfile, MWIE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (2f513669)
+2019-12-25T17:31:25.7111997+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ManageUserController.GetUser (MWIE)" in 355.4972ms (afa2e885)
+2019-12-25T17:31:25.7145082+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (99874f2b)
+2019-12-25T17:31:25.7191047+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Request finished in 379.2243ms 200 application/json; charset=utf-8 (791a596a)
+2019-12-25T17:31:26.3549379+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/Drug   (ca22a1cb)
+2019-12-25T17:31:26.3620600+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.DrugController.Index (MWIE)"' (500cc934)
+2019-12-25T17:31:26.3665381+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Drug\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ViewResult Index()" on controller "MWIE.Controllers.DrugController" ("MWIE"). (122b2fdf)
+2019-12-25T17:31:26.3687869+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:31:26.3732840+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.DrugController.Index (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:31:26.3828589+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:31:26.4332286+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Amount], [d].[DateOfManufacture], [d].[ExpriryDate], [d].[GroupDrugId], [d].[IsActive], [d].[Name], [d].[Price], [d].[ProducerId], [d].[Unit]
+FROM [Drugs] AS [d]" (0723d8ff)
+2019-12-25T17:31:26.4759418+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[IsActive], [e].[Name], [e].[Phone]
+FROM [Producers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5187909+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5338279+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5371683+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[IsActive], [e].[Name], [e].[Phone]
+FROM [Producers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5403920+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5441559+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[IsActive], [e].[Name], [e].[Phone]
+FROM [Producers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5478738+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5512413+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[IsActive], [e].[Name], [e].[Phone]
+FROM [Producers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5545790+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5578613+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[IsActive], [e].[Name], [e].[Phone]
+FROM [Producers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5616513+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5657720+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[IsActive], [e].[Name], [e].[Phone]
+FROM [Producers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5696329+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5735629+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[IsActive], [e].[Name], [e].[Phone]
+FROM [Producers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5783903+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5819303+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[IsActive], [e].[Name], [e].[Phone]
+FROM [Producers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5851148+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5883721+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[IsActive], [e].[Name], [e].[Phone]
+FROM [Producers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5916898+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5959508+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[IsActive], [e].[Name]
+FROM [GroupDrugs] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:26.5994068+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.DrugController.Index (MWIE)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 223.7196ms. (50a9e262)
+2019-12-25T17:31:26.6068581+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-12-25T17:31:26.8032219+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed ViewResult - view "Index" executed in 199.616ms. (f66409e9)
+2019-12-25T17:31:26.8061884+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.DrugController.Index (MWIE)" in 436.767ms (afa2e885)
+2019-12-25T17:31:26.8098615+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.DrugController.Index (MWIE)"' (99874f2b)
+2019-12-25T17:31:26.8132541+07:00 8000000e-0001-f800-b63f-84710c7967bb [INF] Request finished in 457.3499ms 200 text/html; charset=utf-8 (791a596a)
+2019-12-25T17:31:27.4671028+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44394/ManageUser/GetUser   (ca22a1cb)
+2019-12-25T17:31:27.4743952+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Executing endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (500cc934)
+2019-12-25T17:31:27.4787103+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"GetUser\", controller = \"ManageUser\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.JsonResult GetUser()" on controller "MWIE.Controllers.ManageUserController" ("MWIE"). (122b2fdf)
+2019-12-25T17:31:27.4814049+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Authorization was successful. (0d575a54)
+2019-12-25T17:31:27.4903333+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Executing action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)" - Validation state: Valid (dad538d7)
+2019-12-25T17:31:27.4933809+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"MWIEDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-12-25T17:31:27.4986785+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Email], [e].[FirstName], [e].[IsActive], [e].[LastName], [e].[Phone], [e].[Sex]
+FROM [Profiles] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-12-25T17:31:27.5018538+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Executed action method "MWIE.Controllers.ManageUserController.GetUser (MWIE)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 8.779ms. (50a9e262)
+2019-12-25T17:31:27.5049294+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Executing JsonResult, writing value of type '"<>f__AnonymousType3`1[[MWIE.Models.Entity.UserProfile, MWIE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (2f513669)
+2019-12-25T17:31:27.5113605+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Executed action "MWIE.Controllers.ManageUserController.GetUser (MWIE)" in 26.8729ms (afa2e885)
+2019-12-25T17:31:27.5141461+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Executed endpoint '"MWIE.Controllers.ManageUserController.GetUser (MWIE)"' (99874f2b)
+2019-12-25T17:31:27.5184127+07:00 80000010-0001-f800-b63f-84710c7967bb [INF] Request finished in 57.6734ms 200 application/json; charset=utf-8 (791a596a)

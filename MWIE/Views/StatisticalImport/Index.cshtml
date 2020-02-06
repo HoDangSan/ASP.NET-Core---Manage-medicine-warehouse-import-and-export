@@ -1,0 +1,111 @@
+@{
+    ViewBag.Title = "Statistical Import";
+    Layout = "_Layout";
+}
+@section ScriptsAJAX {
+    <script src="~/DataTables/datatables.min.js"></script>
+    <script src="~/select2/js/select2.min.js"></script>
+    <script src="~/js/StatisticalImport/StatisticalImport.js"></script>
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ScriptTablePatial"); }
+}
+@section CSS
+{
+    @{await Html.RenderPartialAsync("_StyleTablePatial"); }
+}
+<div id="popupDetails" style="display: none; position: fixed; top: 100px;left: 260px ; z-index: 1000">
+    <div class="modal-dialog" style="width: 1025px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="btn-close-up"  type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Bảng chi tiết hóa đơn</h4>
+            </div> 
+            <div class="modal-body" style="padding-left: 50px;">
+                <table id="tabledetail" class="ui celled table">
+                    <thead>
+                    <tr>
+                        <th>Tên thuốc</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Ngày sản xuất</th>
+                        <th>Hạn sử dụng</th>
+                        <th>Tổng giá</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-close" type="button" class="btn btn-default" data-dismiss="modal">Đóng</button> 
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="warning" style="position: fixed; left: 600px; z-index: 1; display: none; padding: 5px;">   
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width: 230px;">
+            <div class="modal-header">
+                <h4 class="modal-title"><div style='text-align: center; color: red'>Cảnh báo</div></h4>
+            </div> 
+            <div class="modal-body" style="padding-left: 50px;">
+                <div style='padding: 5px'>Bạn có muốn xóa?</div>
+            </div>
+            <div class="modal-footer">
+                <div style='text-align: right'><input class="btn btn-default" id='ok' type='button' value='Có'/>&nbsp<input class="btn btn-default" id='no' type='button' value='Không'/></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Static Table Start -->
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Thống kê nhập kho</h1>
+                            <div class="sparkline13-outline-icon">
+                                <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <span><i class="fa fa-wrench"></i></span>
+                                <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <div id="toolbar">
+                                <select class="form-control">
+                                    <option value="">In trang hiện tại</option>
+                                    <option value="all">In tất cả các trang</option>
+                                    <option value="selected">In những hàng được chọn</option>
+                                </select>
+                            </div>
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th> 
+                                        <th data-field="name" data-editable="true">Số lô</th>
+                                        <th data-field="date" data-editable="true">Ngày nhập</th>
+                                        <th data-field="text" data-editable="true">Người nhập</th>
+                                        <th data-field="number" data-editable="true">Tổng giá</th>
+                                        <th data-field="task" data-editable="true">Trạng thái</th>
+                                        <th data-field="action">Xử lý</th>
+                                    </tr>
+                                </thead>    
+                                <tbody id="receipt">
+                                        
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Static Table End -->

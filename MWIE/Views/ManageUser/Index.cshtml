@@ -1,0 +1,78 @@
+﻿    @using MWIE.Models.Entity
+@model IEnumerable<MWIE.Models.ViewModel.UserProfileViewModel>
+@{
+    ViewBag.Title = "Manage User";
+    Layout = "_Layout";
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ScriptTablePatial"); }
+}
+@section CSS
+{
+    @{await Html.RenderPartialAsync("_StyleTablePatial"); }
+}
+
+<!-- Static Table Start -->
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Quản lý <span class="table-project-n">người dùng</span></h1>
+                            <div class="sparkline13-outline-icon">
+                                <span><a asp-action="Create" style="color: black"><i class="fa fa-plus-square"></i></a></span>
+                                <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <span><i class="fa fa-wrench"></i></span>
+                                <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <div id="toolbar">
+                                <select class="form-control">
+                                    <option value="">In trang hiện tại</option>
+                                    <option value="all">In tất cả các trang</option>
+                                    <option value="selected">In những hàng được chọn</option>
+                                </select>
+                            </div>
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        @* <th data-field="state" data-checkbox="true"></th> *@
+                                        <th data-field="name" data-editable="true">Họ Tên</th>
+                                        <th data-field="email" data-editable="true">Email</th>
+                                        <th data-field="phone" data-editable="true">Điện thoại</th>
+                                        <th data-field="date" data-editable="true">Giới tính</th>
+                                        <th data-field="task" data-editable="true">Trạng thái</th>
+                                        <th data-field="action">Xử lý</th>
+                                    </tr>
+                                </thead>    
+                                <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        @* <td></td> *@
+                                        <td>@Html.DisplayFor(modeItem => item.FullName)</td>
+                                        <td>@Html.DisplayFor(modeItem => item.Email)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                                        <td>@Html.DisplayFor(modeItem => item.Sex)</td>
+                                        <td>@Html.DisplayFor(modeItem => item.IsActive)</td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o"> Edit </i></a> |
+                                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash-o"> Delete </i></a>  
+                                        </td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Static Table End -->
