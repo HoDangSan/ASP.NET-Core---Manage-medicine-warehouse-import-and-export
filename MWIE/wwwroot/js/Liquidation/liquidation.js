@@ -30,15 +30,58 @@ user.DrawUser = function() {
     });
 };
 
-drug.DrawTable = function() {
+drug.Select = function () {
+    $.ajax({
+        url: "/Drug/ListAll",
+        type: "GET",
+        dataType: "json",
+        success: function (dataRespose) {
+            var data = dataRespose.data;
+            drug.DrawTable(data);
+        }
+    });
+    $('#mySelect').on('change', function () {
+        var value = $('#mySelect').val();
+        if (value === 'all') {
+            $.ajax({
+                "url": "/Drug/ListAll",
+                "type": "GET",
+                "dataType": "json",
+                "success": function (dataRespose) {
+                    var data = dataRespose.data;
+                    drug.DrawTable(data);
+                }
+            });
+        } else {
+            var today = new Date();
+            $.ajax({
+                "url": "/Drug/ListAll",
+                "type": "GET",
+                "dataType": "json",
+                "success": function (dataRespose) {
+                    var data = dataRespose.data;
+                    let i = 0;
+                    while (data[i] != null) {
+                        if (typeof data[i].expriryDate != "undefined") {
+                            var expriryDate = new Date(data[i].expriryDate);
+                        } else break;
+                        
+                        if (expriryDate > today) {
+                            data.splice(i, 1);
+                        } else i++;
+                    }
+                    drug.DrawTable(data);
+                }
+            });
+        }
+    });
+}
+
+drug.DrawTable = function (data) {
+
     drugtable = $('#table1').DataTable({
         "destroy": true,
-        "ajax": {
-            "url": "/Drug/ListAll",
-            "type": "GET",
-            "dataType": "json"
-
-        },
+        "data": data,
         "columns": [
             { "data": "name" },
             { "data": "unit" },
@@ -70,12 +113,12 @@ drug.DrawTable = function() {
                 "-" +
                 date.getMonth() +
                 "-" +
-                date.getDay();
+                date.getDate();
 
             $(mess).empty();
             $(mess).hide();
             $(mess).append(
-                '<div style="background-color: rgb(225, 225, 225);padding: 5px"><b>Số lượng nhập vào</b>' +
+                '<div style="background-color: rgb(225, 225, 225);padding: 5px"><b>Thông tin thanh lý</b>' +
                 '<span id="close" style="border-radius: 3px;-ms-border-radius: 3px;width: 24px; color: #bb0202; position: absolute; cursor: pointer; right: 7px; top: 8px; background-color: #bdbcbc;">' +
                 'X' +
                 '</span>' +
@@ -136,9 +179,9 @@ receipt.Draw = function() {
     var date = new Date();
     var time = date.getFullYear() +
         "-" +
-        date.getMonth() +
+        (date.getMonth() + 1) +
         "-" +
-        date.getDay() +
+        date.getDate() +
         " " +
         date.getHours() +
         ":" +
@@ -272,7 +315,8 @@ $("#createReceiptImport").on('click',
     }
 );
 
-drug.init = function() {
+drug.init = function () {
+    drug.Select();
     importReceipt.DrawTable();
     user.DrawUser();
     receipt.Draw();

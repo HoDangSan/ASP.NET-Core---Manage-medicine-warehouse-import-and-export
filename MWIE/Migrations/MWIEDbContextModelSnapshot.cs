@@ -19,6 +19,27 @@ namespace MWIE.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("MWIE.Models.Entity.Client", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("Email");
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Phone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Clients");
+                });
+
             modelBuilder.Entity("MWIE.Models.Entity.DetailReceiptExport", b =>
                 {
                     b.Property<int>("Id")
@@ -165,6 +186,8 @@ namespace MWIE.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("ClientId");
+
                     b.Property<string>("CodeReceipt");
 
                     b.Property<DateTime>("DateCreate");
@@ -178,6 +201,8 @@ namespace MWIE.Migrations
                     b.Property<int?>("UserProfileId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
 
                     b.HasIndex("UserProfileId");
 
@@ -465,6 +490,10 @@ namespace MWIE.Migrations
 
             modelBuilder.Entity("MWIE.Models.Entity.ReceiptExport", b =>
                 {
+                    b.HasOne("MWIE.Models.Entity.Client")
+                        .WithMany("ReceiptExports")
+                        .HasForeignKey("ClientId");
+
                     b.HasOne("MWIE.Models.Entity.UserProfile", "ProUserProfilefile")
                         .WithMany("ReceiptExports")
                         .HasForeignKey("UserProfileId");

@@ -69,7 +69,7 @@ drug.DrawTable = function() {
                 "-" +
                 date.getMonth() +
                 "-" +
-                date.getDay();
+                date.getDate();
 
             $(mess).empty();
             $(mess).hide();
@@ -158,9 +158,9 @@ receipt.Draw = function() {
     var date = new Date();
     var time = date.getFullYear() +
         "-" +
-        date.getMonth() +
+        ( date.getMonth() + 1) +
         "-" +
-        date.getDay() +
+        date.getDate() +
         " " +
         date.getHours() +
         ":" +

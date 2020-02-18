@@ -16,6 +16,7 @@ namespace MWIE.UnitOfWork
         IGenericRepository<DetailReceiptImport> DetailReceiptImportRepository { get; }
         IGenericRepository<ReceiptLiquidation> ReceiptLiquidationRepository { get; }
         IGenericRepository<DetailReceiptLiquidation> DetailReceiptLiquidationRepository { get; }
+        IGenericRepository<Client> ClientRepository { get; }
         void Save();
     }
 

@@ -55,44 +55,64 @@ namespace MWIE.Controllers
                 View(model);
         }
 
-        public async Task<IActionResult> GetUser()
+        public IActionResult GetUser()
         {
             var userProfileId = User.Claims
                 .Where(c => c.Type == "UserProfileId")
                 .Select(c => c.Value).SingleOrDefault();
-           /* if (_userManager.GetUserName(HttpContext.User).Equals("admin@test.com") && userProfileId == null)
-            {
-                UserProfile userProfileAdmin = new UserProfile()
-                {
-                    FirstName = "Admin",
-                    LastName = "",
-                    Email = "admin@test.com"
-                };
+            /* if (_userManager.GetUserName(HttpContext.User).Equals("admin@test.com") && userProfileId == null)
+             {
+                 UserProfile userProfileAdmin = new UserProfile()
+                 {
+                     FirstName = "Admin",
+                     LastName = "",
+                     Email = "admin@test.com"
+                 };
 
-                _userService.Add(userProfileAdmin);
-                _userService.Save();
+                 _userService.Add(userProfileAdmin);
+                 _userService.Save();
 
-                var userProfileClaim = new Claim("UserProfileId", userProfileAdmin.Id.ToString());
-                var user = await _userManager.GetUserAsync(HttpContext.User);
-                await _userManager.AddClaimAsync(user, userProfileClaim);
+                 var userProfileClaim = new Claim("UserProfileId", userProfileAdmin.Id.ToString());
+                 var user = await _userManager.GetUserAsync(HttpContext.User);
+                 await _userManager.AddClaimAsync(user, userProfileClaim);
 
-                userProfileId = userProfileAdmin.Id.ToString();
-            }*/
+                 userProfileId = userProfileAdmin.Id.ToString();
+             }*/
             UserProfile userProfile = _userService.GetById(Int32.Parse(userProfileId));
 
-            return Json(new {data = userProfile});
+            return Json(new { data = userProfile });
         }
 
         [HttpGet]
         public IActionResult Get()
         {
             var receiptImports =  _receiptImportService.GetAll();
-            Collection<ReceiptImport> model = new Collection<ReceiptImport>();
+            Collection<ReceiptImportViewModel> model = new Collection<ReceiptImportViewModel>();
             foreach (var item in receiptImports)
             {    
                 if (item.IsActive)
                 {
-                    model.Add(item);
+                    var user = _userService.GetById(item.Id);
+
+                    string nameUser;
+
+                    if (user != null)
+                    {
+                        nameUser = user.FirstName + user.LastName;
+                    }
+                    else nameUser = "";
+
+                    ReceiptImportViewModel receiptImportViewModel = new ReceiptImportViewModel()
+                    {
+                        Id = item.Id,
+                        CodeReceipt = item.CodeReceipt,
+                        DateCreate = item.DateCreate,
+                        TotalPrice = item.TotalPrice,
+                        ProUserProfileName = nameUser,
+                        IsActive = (item.IsActive) ? "Đang hoạt động" : "Đã khóa"
+                    };
+
+                    model.Add(receiptImportViewModel);
                 }
             }
             return Json(model);

@@ -79,7 +79,7 @@ drug.DrawTable = function() {
                 "-" +
                 date.getMonth() +
                 "-" +
-                date.getDay();
+                date.getDate();
 
             $(mess).empty();
             $(mess).hide();
@@ -167,9 +167,9 @@ receipt.Draw = function() {
     var date = new Date();
     var time = date.getFullYear() +
         "-" +
-        date.getMonth() +
+        (date.getMonth() + 1) +
         "-" +
-        date.getDay() +
+        date.getDate() +
         " " +
         date.getHours() +
         ":" +
@@ -177,6 +177,22 @@ receipt.Draw = function() {
         ":" +
         date.getSeconds();
     $("#dateCreate").val(time);
+
+    $.ajax({
+        url: '/Client/ListAll',
+        method: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function (dataRespose) {
+            var data = dataRespose.data;
+            $('#client').empty();
+            $.each(data,
+                function (index, value) {
+                    $('#client')
+                        .append("<option value = " + value.id + ">" + value.name + "</option>");
+                });
+        }
+    });
 };
 
 importReceipt.DrawTable = function() {
@@ -254,6 +270,7 @@ $("#createReceiptImport").on('click',
             var importObj = {};
             importObj["codeReceipt"] = $("#idReceipt").val();
             importObj["dateCreate"] = $("#dateCreate").val();
+            importObj["clientId"] = $("#client").val();
             importObj["totalPrice"] = totalPrice;
             importObj["isPay"] = ($('#isPay').is(":checked")) ? true : false;
             importObj["isActive"] = true;

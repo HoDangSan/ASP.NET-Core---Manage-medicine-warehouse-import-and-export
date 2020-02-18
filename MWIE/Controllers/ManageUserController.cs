@@ -18,7 +18,7 @@ namespace MWIE.Controllers
     {
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
-        private readonly UserManager<IdentityUser> _userManager;
+        //private readonly UserManager<IdentityUser> _userManager;
 
         public ManageUserController(IUserService userService, IMapper mapper)
         {
@@ -91,36 +91,45 @@ namespace MWIE.Controllers
             _userService.Save();
             return RedirectToAction("Index");
         }
-        
+
         // GET:  ManageUser/GetUser
         [Authorize(Policy = "Manager")]
-        public async System.Threading.Tasks.Task<JsonResult> GetUser()
+        public JsonResult GetUser()
         {
             var userProfileId = User.Claims
                 .Where(c => c.Type == "UserProfileId")
                 .Select(c => c.Value).SingleOrDefault();
 
-           /* if (_userManager.GetUserName(HttpContext.User).Equals("admin@test.com") && userProfileId == null)
-            {
-                UserProfile userProfileAdmin = new UserProfile()
-                {
-                    FirstName = "Admin",
-                    LastName = "",
-                    Email = "admin@test.com"
-                };
+            /* if (_userManager.GetUserName(HttpContext.User).Equals("admin@test.com") && userProfileId == null)
+             {
+                 UserProfile userProfileAdmin = new UserProfile()
+                 {
+                     FirstName = "Admin",
+                     LastName = "",
+                     Email = "admin@test.com"
+                 };
 
-                _userService.Add(userProfileAdmin);
-                _userService.Save();
+                 _userService.Add(userProfileAdmin);
+                 _userService.Save();
 
-                var userProfileClaim = new Claim("UserProfileId", userProfileAdmin.Id.ToString());
-                var user = await _userManager.GetUserAsync(HttpContext.User);
-                await _userManager.AddClaimAsync(user, userProfileClaim);
+                 var userProfileClaim = new Claim("UserProfileId", userProfileAdmin.Id.ToString());
+                 var user = await _userManager.GetUserAsync(HttpContext.User);
+                 await _userManager.AddClaimAsync(user, userProfileClaim);
 
-                userProfileId = userProfileAdmin.Id.ToString();
-            }*/
+                 userProfileId = userProfileAdmin.Id.ToString();
+             }*/
             UserProfile userProfile = _userService.GetById(Int32.Parse(userProfileId));
 
-            return Json(new {data = userProfile});
+            return Json(new { data = userProfile });
+        }
+
+        [HttpGet]
+        [Authorize(Policy = "Manager")]
+        public JsonResult Get(int id)
+        {
+            var user = _userService.GetById(id);
+
+            return Json(new { data = user });
         }
     }
 }

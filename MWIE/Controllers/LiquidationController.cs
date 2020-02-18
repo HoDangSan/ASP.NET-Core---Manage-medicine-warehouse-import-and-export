@@ -7,6 +7,7 @@ using MWIE.Models.ViewModel;
 using MWIE.Service.DetailReceiptLiquidationService;
 using MWIE.Service.DrugService;
 using MWIE.Service.ReceiptLiquidationService;
+using MWIE.Service.UserService;
 
 namespace MWIE.Controllers
 {
@@ -17,13 +18,15 @@ namespace MWIE.Controllers
         private readonly IDetailReceiptLiquidationService _detailReceiptLiquidationService;
         private readonly IDrugService _drugService;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public LiquidationController(IReceiptLiquidationService receiptLiquidationService, IDetailReceiptLiquidationService detailReceiptLiquidationService, IMapper mapper, IDrugService drugService)
+        public LiquidationController(IReceiptLiquidationService receiptLiquidationService, IDetailReceiptLiquidationService detailReceiptLiquidationService, IMapper mapper, IDrugService drugService, IUserService userService)
         {
             _receiptLiquidationService = receiptLiquidationService;
             _detailReceiptLiquidationService = detailReceiptLiquidationService;
             _mapper = mapper;
             _drugService = drugService;
+            _userService = userService;
         }
 
         public IActionResult Index()
@@ -39,13 +42,33 @@ namespace MWIE.Controllers
         public IActionResult Get()
         {
             var receiptLiquidations =  _receiptLiquidationService.GetAll();
-            Collection<ReceiptLiquidation> model = new Collection<ReceiptLiquidation>();
+            Collection<ReceiptLiquidationViewModel> model = new Collection<ReceiptLiquidationViewModel>();
             
             foreach (var item in receiptLiquidations)
             {    
                 if (item.IsActive)
                 {
-                    model.Add(item);
+                    var user = _userService.GetById(item.Id);
+
+                    string nameUser;
+
+                    if (user != null)
+                    {
+                        nameUser = user.FirstName + user.LastName;
+                    }
+                    else nameUser = "";
+
+                    ReceiptLiquidationViewModel receiptLiquidationViewModel = new ReceiptLiquidationViewModel()
+                    {
+                        Id = item.Id,
+                        CodeReceipt = item.CodeReceipt,
+                        DateCreate = item.DateCreate,
+                        TotalPrice = item.TotalPrice,
+                        ProUserProfileName = nameUser,
+                        IsActive = (item.IsActive) ? "Đang hoạt động" : "Đã khóa"
+                    };
+
+                    model.Add(receiptLiquidationViewModel);
                 }
             }
             return Json(model);

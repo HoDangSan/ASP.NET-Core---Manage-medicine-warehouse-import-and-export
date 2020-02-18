@@ -20,5 +20,6 @@ namespace MWIE.Models
         public DbSet<DetailReceiptImport> DetailReceiptImports { get; set; }
         public DbSet<DetailReceiptExport> DetailReceiptExports { get; set; }
         public DbSet<DetailReceiptLiquidation> DetailReceiptLiquidations { get; set; }   
+        public DbSet<Client> Clients { get; set; }
     }
 }

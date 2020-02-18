@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MWIE.Models;
 using MWIE.Models.Entity;
+using MWIE.Repository.ClientRepository;
 using MWIE.Repository.DetailReceiptExportRepository;
 using MWIE.Repository.DetailReceiptImportRepository;
 using MWIE.Repository.DetailReceiptLiquidationRepository;
@@ -24,6 +25,7 @@ using MWIE.Repository.ReceiptExportRepository;
 using MWIE.Repository.ReceiptImportRepository;
 using MWIE.Repository.ReceiptLiquidationRepository;
 using MWIE.Repository.UserRepository;
+using MWIE.Service.ClientService;
 using MWIE.Service.DetailReceiptExportService;
 using MWIE.Service.DetailReceiptImportService;
 using MWIE.Service.DetailReceiptLiquidationService;
@@ -129,7 +131,11 @@ namespace MWIE
             services.AddTransient<IDetailReceiptLiquidationRepository, DetailReceiptLiquidationRepository>();
             services.AddScoped<IDetailReceiptLiquidationService, DetailReceiptLiquidationService>();
             services.AddTransient<IGenericRepository<DetailReceiptLiquidation>, GenericRepository<DetailReceiptLiquidation>>();
-            
+
+            services.AddTransient<IClientRepository, ClientRepository>();
+            services.AddScoped<IClientService, ClientService>();
+            services.AddTransient<IGenericRepository<Client>, GenericRepository<Client>>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddSessionStateTempDataProvider();
             services.AddSession();
         }

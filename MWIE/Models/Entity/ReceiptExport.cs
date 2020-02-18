@@ -21,5 +21,7 @@ namespace MWIE.Models.Entity
         public UserProfile ProUserProfilefile { get; set; }
 
         public virtual IEnumerable<DetailReceiptExport> DetailReceiptExports { get; set; }
+
+        public int ClientId { get; set; }
     }
 }

@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Manage Client";
+    Layout = "_Layout";
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ScriptTablePatial"); }
+}
+@section CSS
+{
+    @{await Html.RenderPartialAsync("_StyleTablePatial"); }
+}
+@section ScriptsAJAX {
+    <script src="~/DataTables/datatables.min.js"></script>
+    <script src="~/select2/js/select2.min.js"></script>
+    <script src="~/js/Client/client.js"></script>
+}
+
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Quản lý khách hàng</h1>
+                            <div class="sparkline13-outline-icon">
+                                <span id="addClient"><a style="color: black"><i class="fa fa-plus-square"></i></a> Thêm mới khách hàng</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright" style="text-align: left">
+                            <!-- Code vao day -->
+                            <div class="modal-body" style="padding-left: 50px;">
+                                <table id="table" class="ui celled table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên khách hàng</th>
+                                            <th>Địa chỉ</th>
+                                            <th>Email</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Xử lý</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <!-- Code vao day -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popup-add" style="display: none;
+                            position: fixed;
+                            top: 78px;
+                            left: 352px;
+                            z-index: 1000">
+    <div class="modal-dialog" style="width: 600px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="btn-close-up-add" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Những hóa đơn nhập hôm nay</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <div class="form-group">
+                    <label for="name">Tên khách hàng:</label>
+                    <input type="text" class="form-control" id="nameAdd" placeholder="Nhập tên khách hàng" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="emailAdd" placeholder="Nhập email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ:</label>
+                    <input type="text" class="form-control" id="addressAdd" placeholder="Nhập địa chỉ" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Điện thoại:</label>
+                    <input type="text" class="form-control" id="phoneAdd" placeholder="Nhập địa chỉ" name="phone" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-add" type="button" class="btn btn-default" data-dismiss="modal">Thêm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popup-edit" style="display: none;
+                            position: fixed;
+                            top: 29px;
+                            left: 386px;
+                            z-index: 1000">
+    <div class="modal-dialog" style="width: 825px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="btn-close-up-edit" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Chỉnh sửa thông tin khách hàng</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <input type="hidden" id="idEdit">
+                <div class="form-group">
+                    <label for="name">Tên khách hàng:</label>
+                    <input type="text" class="form-control" id="nameEdit" placeholder="Nhập tên khách hàng" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="emailEdit" placeholder="Nhập email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ:</label>
+                    <input type="text" class="form-control" id="addressEdit" placeholder="Nhập địa chỉ" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Điện thoại:</label>
+                    <input type="text" class="form-control" id="phoneEdit" placeholder="Nhập địa chỉ" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Trạng thái</label>
+                    <input type="checkbox" id="isActiveEdit" class="form-control" style="width: 31px" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-edit" type="button" class="btn btn-default" data-dismiss="modal">Sửa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="warning" style=" position: fixed;
+                                top: 132px;
+                                left: 525px;
+                                z-index: 1000;
+                                display: none;
+                                padding: 5px;">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width: 230px;">
+            <div class="modal-header">
+                <h4 class="modal-title"><span style='text-align: center; color: red'>Cảnh báo</span></h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <div style='padding: 5px'>Bạn có muốn xóa?</div>
+            </div>
+            <div class="modal-footer">
+                <div style='text-align: right'><input class="btn btn-default" id='ok' type='button' value='Có' />&nbsp<input class="btn btn-default" id='no' type='button' value='Không' /></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,12 +13,11 @@ namespace MWIE.Models.ViewModel
         public DateTime DateCreate { get; set; }
         public double TotalPrice { get; set; }
         
-        [DefaultValue("true")]
         public string IsActive { get; set; }
         
         public int? UserProfileId { get; set; }
-        [ForeignKey("UserProfileId")]
-        public UserProfile ProUserProfilefile { get; set; }
+
+        public string ProUserProfileName { get; set; }
 
         public virtual IEnumerable<DetailReceiptLiquidation> DetailReceiptLiquidations { get; set; }
     }

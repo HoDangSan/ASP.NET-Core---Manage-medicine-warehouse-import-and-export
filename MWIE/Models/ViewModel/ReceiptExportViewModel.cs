@@ -14,14 +14,15 @@ namespace MWIE.Models.ViewModel
         public double TotalPrice { get; set; }
         public string IsPay { get; set; }
         
-        [DefaultValue("true")]
         public string IsActive { get; set; }
         
         public int? UserProfileId { get; set; }
-        [ForeignKey("UserProfileId")]
-        public UserProfile ProUserProfilefile { get; set; }
+
+        public string ProUserProfileName { get; set; }
 
         public virtual IEnumerable<DetailReceiptExport> DetailReceiptExports { get; set; }
+
+        public string ClientName { get; set; }
     }
     
     public class ReceiptExportViewModelEdit

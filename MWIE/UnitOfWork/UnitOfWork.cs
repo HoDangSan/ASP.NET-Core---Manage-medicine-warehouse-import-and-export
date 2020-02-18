@@ -46,6 +46,7 @@ namespace MWIE.UnitOfWork
         public IGenericRepository<DetailReceiptImport> DetailReceiptImportRepository { get; private set; }
         public IGenericRepository<ReceiptLiquidation> ReceiptLiquidationRepository { get; private set; }
         public IGenericRepository<DetailReceiptLiquidation> DetailReceiptLiquidationRepository { get; private set; }
+        public IGenericRepository<Client> ClientRepository { get; private set; }
         
 
         private void InitReponsitory()
@@ -60,6 +61,7 @@ namespace MWIE.UnitOfWork
             DetailReceiptImportRepository = new GenericRepository<DetailReceiptImport>(_context);
             ReceiptLiquidationRepository = new GenericRepository<ReceiptLiquidation>(_context);
             DetailReceiptLiquidationRepository = new GenericRepository<DetailReceiptLiquidation>(_context);
+            ClientRepository = new GenericRepository<Client>(_context);
             
         }
 

@@ -1,4 +1,4 @@
-﻿﻿@using MWIE.Models.Entity
+﻿ ﻿@using MWIE.Models.Entity
 @model MWIE.Models.ViewModel.ImportDrugViewmodel
 @{
     ViewBag.Title = "Thanh lý";
@@ -76,7 +76,10 @@
                                         <div class="modal-body">
                                             <div class="sparkline13-graph">    
                                                 <div class="datatable-dashv1-list custom-datatable-overright">
-                                                    
+                                                    <select id="mySelect">
+                                                        <option value="all">Tất cả</option>
+                                                        <option value="OutOfDay">Đã hết hạn</option>
+                                                    </select>
                                                     <table id="table1" class="ui celled table">
                                                         <thead>
                                                         <tr>

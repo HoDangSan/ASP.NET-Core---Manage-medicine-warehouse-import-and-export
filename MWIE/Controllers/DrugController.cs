@@ -33,8 +33,7 @@ namespace MWIE.Controllers
             _mapper = mapper;
           
         }
-        
-       
+              
         // GET
         [HttpGet]
         public ViewResult Index()

@@ -116,16 +116,6 @@ namespace MWIE.Models
                 .ForMember(d => d.ProducerId, opt => opt.MapFrom(src => src.ProducerId))
                 .ForMember(d => d.GroupDrugId, opt => opt.MapFrom(src => src.GroupDrugId));
 
-            CreateMap<ReceiptExport, ReceiptExportViewModel>()
-                .ForMember(d => d.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(d => d.CodeReceipt, opt => opt.MapFrom(src => src.CodeReceipt))
-                .ForMember(d => d.DateCreate, opt => opt.MapFrom(src => src.DateCreate))
-                .ForMember(d => d.TotalPrice, opt => opt.MapFrom(src => src.TotalPrice))
-                .ForMember(d => d.IsPay, opt => opt.MapFrom(src => src.IsPay))
-                .ForMember(d => d.IsActive, opt => opt.MapFrom(src => src.IsActive? "Đang hoạt động" : "Đã khóa"))
-                .ForMember(d => d.UserProfileId, opt => opt.MapFrom(src => src.UserProfileId))
-                .ForMember(d => d.ProUserProfilefile, opt => opt.MapFrom(src => src.ProUserProfilefile))
-                .ForMember(d => d.DetailReceiptExports, opt => opt.MapFrom(src => src.DetailReceiptExports));
             CreateMap<ReceiptExport, ReceiptExportViewModelEdit>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(d => d.CodeReceipt, opt => opt.MapFrom(src => src.CodeReceipt))
@@ -160,15 +150,6 @@ namespace MWIE.Models
                 .ForMember(d => d.TotalPrice, opt => opt.MapFrom(src => src.TotalPrice))
                 .ForMember(d => d.ReceiptExportId, opt => opt.MapFrom(src => src.ReceiptExportId));
 
-            CreateMap<ReceiptImport, ReceiptImportViewModel>()
-                .ForMember(d => d.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(d => d.CodeReceipt, opt => opt.MapFrom(src => src.CodeReceipt))
-                .ForMember(d => d.DateCreate, opt => opt.MapFrom(src => src.DateCreate))
-                .ForMember(d => d.TotalPrice, opt => opt.MapFrom(src => src.TotalPrice))
-                .ForMember(d => d.IsActive, opt => opt.MapFrom(src => src.IsActive ? "Đang hoạt động" : "Đã khóa"))
-                .ForMember(d => d.UserProfileId, opt => opt.MapFrom(src => src.UserProfileId))
-                .ForMember(d => d.ProUserProfilefile, opt => opt.MapFrom(src => src.ProUserProfilefile))
-                .ForMember(d => d.DetailReceiptImports, opt => opt.MapFrom(src => src.DetailReceiptImports));
             CreateMap<ReceiptImport, ReceiptImportViewModelEdit>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(d => d.CodeReceipt, opt => opt.MapFrom(src => src.CodeReceipt))
@@ -188,15 +169,6 @@ namespace MWIE.Models
                 .ForMember(d => d.ProUserProfilefile, opt => opt.MapFrom(src => src.ProUserProfilefile))
                 .ForMember(d => d.DetailReceiptImports, opt => opt.MapFrom(src => src.DetailReceiptImports));
             
-            CreateMap<ReceiptLiquidation, ReceiptLiquidationViewModel>()
-                .ForMember(d => d.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(d => d.CodeReceipt, opt => opt.MapFrom(src => src.CodeReceipt))
-                .ForMember(d => d.DateCreate, opt => opt.MapFrom(src => src.DateCreate))
-                .ForMember(d => d.TotalPrice, opt => opt.MapFrom(src => src.TotalPrice))
-                .ForMember(d => d.IsActive, opt => opt.MapFrom(src => src.IsActive ? "Đang hoạt động" : "Đã khóa"))
-                .ForMember(d => d.UserProfileId, opt => opt.MapFrom(src => src.UserProfileId))
-                .ForMember(d => d.ProUserProfilefile, opt => opt.MapFrom(src => src.ProUserProfilefile))
-                .ForMember(d => d.DetailReceiptLiquidations, opt => opt.MapFrom(src => src.DetailReceiptLiquidations));
             CreateMap<ReceiptLiquidation, ReceiptLiquidationViewModelEdit>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(d => d.CodeReceipt, opt => opt.MapFrom(src => src.CodeReceipt))
@@ -242,6 +214,21 @@ namespace MWIE.Models
                 .ForMember(d => d.IsActive, opt => opt.MapFrom(src => src.IsActive))
                 .ForMember(d => d.UserProfileId, opt => opt.MapFrom(src => src.UserProfileId))
                 .ForMember(d => d.DetailReceiptExports, opt => opt.MapFrom(src => src.DetailReceiptExportCreates));
+
+            CreateMap<Client, ClientViewModelEdit>()
+               .ForMember(d => d.Id, opt => opt.MapFrom(src => src.Id))
+               .ForMember(d => d.Name, opt => opt.MapFrom(src => src.Name))
+               .ForMember(d => d.Address, opt => opt.MapFrom(src => src.Address))
+               .ForMember(d => d.Email, opt => opt.MapFrom(src => src.Email))
+               .ForMember(d => d.Phone, opt => opt.MapFrom(src => src.Phone))
+               .ForMember(d => d.IsActive, opt => opt.MapFrom(src => src.IsActive));
+            CreateMap<ClientViewModelEdit, Client>()
+                .ForMember(d => d.Id, opt => opt.MapFrom(src => src.Id))
+               .ForMember(d => d.Name, opt => opt.MapFrom(src => src.Name))
+               .ForMember(d => d.Address, opt => opt.MapFrom(src => src.Address))
+               .ForMember(d => d.Email, opt => opt.MapFrom(src => src.Email))
+               .ForMember(d => d.Phone, opt => opt.MapFrom(src => src.Phone))
+               .ForMember(d => d.IsActive, opt => opt.MapFrom(src => src.IsActive));
         }
     }
 }

@@ -1,0 +1,485 @@
+﻿
+@{
+    ViewBag.Title = "OverView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section ScriptsAJAX {
+    <script src="~/DataTables/datatables.min.js"></script>
+    <script src="~/select2/js/select2.min.js"></script>
+    <script src="~/js/overview/overview.js"></script>
+}
+
+
+@section CSS
+{
+    @{await Html.RenderPartialAsync("_StyleTablePatial"); }
+    <style>
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+            .flex-container > div {
+                margin: 5px;
+                text-align: center;
+            }
+
+        #receiptExportToday:hover, #receiptImportToday:hover, #receiptLiquidationToday:hover {
+            cursor: pointer;
+            color: red;
+            font-style: unset;
+        }
+    </style>
+}
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Tổng quan</h1>                            
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright" style="text-align: left">
+                            <!-- Code vao day -->
+                            <h4>Hôm nay</h4>
+                            <div class="flex-container">
+                                <div id="receiptImportToday"><span id="numberImport">0</span> hóa đơn nhập</div>
+                                <div>|</div>
+                                <div id="receiptExportToday"><span id="numberExport">0</span> hóa đơn xuất</div>
+                                <div>|</div>
+                                <div id="receiptLiquidationToday"><span id="numberLiquidation">0</span> hóa đơn thanh lý</div>
+                            </div>
+                            <br />                            
+                            <!-- Code vao day -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*popup Import*@
+<div id="popupReceiptImport" style="display: none;
+                                    position: fixed;
+                                    top: 100px;
+                                    left: 260px;
+                                    z-index: 1000">
+    <div class="modal-dialog" style="width: 825px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="btn-close-up-import" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Những hóa đơn nhập hôm nay</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <table id="tabledetailImport" class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Số lô</th>
+                            <th>Ngày nhập</th>
+                            <th>Tổng giá</th>
+                            <th>Người nhập</th>
+                            <th>Xử lý</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-close-import" type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popupDetailsImport" style="display: none; position: fixed; top: 100px;left: 260px ; z-index: 1000">
+    <div class="modal-dialog" style="width: 1025px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="btn-close-up-detailImport" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Bảng chi tiết hóa đơn</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <table id="tabledetailImportDrug" class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Tên thuốc</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Ngày sản xuất</th>
+                            <th>Hạn sử dụng</th>
+                            <th>Tổng giá</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-close-detailImport" type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="warningImport" style=" position: fixed;
+                                top: 132px;
+                                left: 525px;
+                                z-index: 1000;
+                                display: none;
+                                padding: 5px;">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width: 230px;">
+            <div class="modal-header">
+                <h4 class="modal-title"><span style='text-align: center; color: red'>Cảnh báo</span></h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <div style='padding: 5px'>Bạn có muốn xóa?</div>
+            </div>
+            <div class="modal-footer">
+                <div style='text-align: right'><input class="btn btn-default" id='okImport' type='button' value='Có' />&nbsp<input class="btn btn-default" id='noImport' type='button' value='Không' /></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*popup Export*@
+<div id="popupReceiptExport" style="display: none; position: fixed; top: 100px;left: 260px ; z-index: 1000">
+    <div class="modal-dialog" style="width: 825px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="btn-close-up-export" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Những hóa đơn xuất hôm nay</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <table id="tabledetailExport" class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Số lô</th>
+                            <th>Ngày nhập</th>
+                            <th>Tổng giá</th>
+                            <th>Người nhập</th>
+                            <th>Xử lý</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-close-export" type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popupDetailsExport" style="display: none; position: fixed; top: 100px;left: 260px ; z-index: 1000">
+    <div class="modal-dialog" style="width: 1025px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="btn-close-up-detailExport" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Bảng chi tiết hóa đơn</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <table id="tabledetailExportDrug" class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Tên thuốc</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Ngày sản xuất</th>
+                            <th>Hạn sử dụng</th>
+                            <th>Tổng giá</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-close-detailExport" type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="warningExport" style=" position: fixed;
+                                top: 132px;
+                                left: 525px;
+                                z-index: 1000;
+                                display: none;
+                                padding: 5px;">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width: 230px;">
+            <div class="modal-header">
+                <h4 class="modal-title"><span style='text-align: center; color: red'>Cảnh báo</span></h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <div style='padding: 5px'>Bạn có muốn xóa?</div>
+            </div>
+            <div class="modal-footer">
+                <div style='text-align: right'><input class="btn btn-default" id='okExport' type='button' value='Có' />&nbsp<input class="btn btn-default" id='noExport' type='button' value='Không' /></div>
+            </div>
+        </div>
+    </div>
+</div>
+@*popup liquidation*@
+<div id="popupReceiptLiquidation" style="display: none; position: fixed; top: 100px;left: 260px ; z-index: 1000">
+    <div class="modal-dialog" style="width: 825px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="btn-close-up-liquidation" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Những hóa đơn thanh lý hôm nay</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <table id="tabledetailLiquidation" class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Số lô</th>
+                            <th>Ngày nhập</th>
+                            <th>Tổng giá</th>
+                            <th>Người nhập</th>
+                            <th>Xử lý</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-close-liquidation" type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popupDetailsLiquidation" style="display: none; position: fixed; top: 100px;left: 260px ; z-index: 1000">
+    <div class="modal-dialog" style="width: 1025px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="btn-close-up-detailLiquidation" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Bảng chi tiết hóa đơn</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <table id="tabledetailLiquidationDrug" class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Tên thuốc</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Ngày sản xuất</th>
+                            <th>Hạn sử dụng</th>
+                            <th>Tổng giá</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-close-detailLiquidation" type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="warningLiquidation" style=" position: fixed;
+                                top: 132px;
+                                left: 525px;
+                                z-index: 1000;
+                                display: none;
+                                padding: 5px;">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width: 230px;">
+            <div class="modal-header">
+                <h4 class="modal-title"><span style='text-align: center; color: red'>Cảnh báo</span></h4>
+            </div>
+            <div class="modal-body" style="padding-left: 50px;">
+                <div style='padding: 5px'>Bạn có muốn xóa?</div>
+            </div>
+            <div class="modal-footer">
+                <div style='text-align: right'><input class="btn btn-default" id='okLiquidation' type='button' value='Có' />&nbsp<input class="btn btn-default" id='noLiquidation' type='button' value='Không' /></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Giao dịch trong tuần</h1>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright" style="text-align: left">
+                            <!-- Code vao day -->
+                            <canvas id="canvas" height="300" width="400"></canvas>
+                            <!-- Code vao day -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Giao dịch trong tháng</h1>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright" style="text-align: left">
+                            <!-- Code vao day -->
+                            <canvas id="canvasMonth" height="300" width="400"></canvas>
+                            <!-- Code vao day -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Giao dịch trong năm</h1>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright" style="text-align: left">
+                            <!-- Code vao day -->
+                            <canvas id="canvasYear" height="300" width="400"></canvas>
+                            <!-- Code vao day -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Chart/Chart.js"></script>
+    <script>
+        var ctxWeek = document.getElementById('canvas').getContext('2d');
+        var ctxMonth = document.getElementById('canvasMonth').getContext('2d');
+        var ctxYear = document.getElementById('canvasYear').getContext('2d');
+
+        var myChart = new Chart(ctxWeek, {
+            type: 'line',
+            data: {
+                labels: ["Thứ 2","Thứ 3","Thứ 4","Thứ 5","Thứ 6","Thứ 7","Chủ nhật"],
+                datasets: [{ 
+                    data: [86,114,106,106,107,111,133],
+                    label: "Nhập kho",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }, { 
+                    data: [282,350,411,502,635,809,947],
+                    label: "Xuất kho",
+                    borderColor: "#8e5ea2",
+                    fill: false
+                }, { 
+                    data: [168,170,178,190,203,276,408],
+                    label: "Thanh lý",
+                    borderColor: "#3cba9f",
+                    fill: false
+                }
+                ]
+            },
+            options: {
+                title: {
+                display: true,
+                text: 'Biểu đồ doanh thu tuần (đơn vị triệu VNĐ)'
+                }
+            }
+        });
+
+        var myChartMonth = new Chart(ctxMonth, {
+            type: 'line',
+            data: {
+                labels: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"],
+                datasets: [{ 
+                    data: [86,114,106,106,107,111,133,100,87,90,86,114,106,106,107,111,133,100,87,90,86,114,106,106,107,111,133,100,87,90,100],
+                    label: "Nhập kho",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }, { 
+                    data: [282,350,411,502,635,809,947,800,875,787,282,350,411,502,635,809,947,800,875,787,282,350,411,502,635,809,947,800,875,787,900],
+                    label: "Xuất kho",
+                    borderColor: "#8e5ea2",
+                    fill: false
+                }, { 
+                    data: [168,170,178,190,203,276,408,500,600,565,168,170,178,190,203,276,408,500,600,565,168,170,178,190,203,276,408,500,600,565,800],
+                    label: "Thanh lý",
+                    borderColor: "#3cba9f",
+                    fill: false
+                }
+                ]
+            },
+            options: {
+                title: {
+                display: true,
+                text: 'Biểu đồ doanh thu tháng (đơn vị triệu VNĐ)'
+                }
+            }
+        });
+
+        var myChartYear = new Chart(ctxYear, {
+            type: 'line',
+            data: {
+                labels: ["tháng 1","tháng 2","tháng 3","tháng 4","tháng 5","tháng 6","tháng 7","tháng 8","tháng 9","tháng 10","tháng 11","tháng 12",],
+                datasets: [{ 
+                    data: [86,114,106,106,107,111,133,106,106,107,111,133],
+                    label: "Nhập kho",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }, { 
+                    data: [282,350,411,502,635,809,947,106,106,107,111,133],
+                    label: "Xuất kho",
+                    borderColor: "#8e5ea2",
+                    fill: false
+                }, { 
+                    data: [168,170,178,190,203,276,408,106,106,107,111,133],
+                    label: "Thanh lý",
+                    borderColor: "#3cba9f",
+                    fill: false
+                }
+                ]
+            },
+            options: {
+                title: {
+                display: true,
+                text: 'Biểu đồ doanh thu năm (đơn vị triệu VNĐ)'
+                }
+            }
+        });
+    </script>
+}
+
