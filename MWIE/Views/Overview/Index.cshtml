@@ -7,6 +7,7 @@
     <script src="~/DataTables/datatables.min.js"></script>
     <script src="~/select2/js/select2.min.js"></script>
     <script src="~/js/overview/overview.js"></script>
+    <script src="~/js/Chart/Chart.js"></script>
 }
 
 
@@ -383,103 +384,4 @@
         </div>
     </div>
 </div>
-
-@section Scripts {
-    <script src="~/js/Chart/Chart.js"></script>
-    <script>
-        var ctxWeek = document.getElementById('canvas').getContext('2d');
-        var ctxMonth = document.getElementById('canvasMonth').getContext('2d');
-        var ctxYear = document.getElementById('canvasYear').getContext('2d');
-
-        var myChart = new Chart(ctxWeek, {
-            type: 'line',
-            data: {
-                labels: ["Thứ 2","Thứ 3","Thứ 4","Thứ 5","Thứ 6","Thứ 7","Chủ nhật"],
-                datasets: [{ 
-                    data: [86,114,106,106,107,111,133],
-                    label: "Nhập kho",
-                    borderColor: "#3e95cd",
-                    fill: false
-                }, { 
-                    data: [282,350,411,502,635,809,947],
-                    label: "Xuất kho",
-                    borderColor: "#8e5ea2",
-                    fill: false
-                }, { 
-                    data: [168,170,178,190,203,276,408],
-                    label: "Thanh lý",
-                    borderColor: "#3cba9f",
-                    fill: false
-                }
-                ]
-            },
-            options: {
-                title: {
-                display: true,
-                text: 'Biểu đồ doanh thu tuần (đơn vị triệu VNĐ)'
-                }
-            }
-        });
-
-        var myChartMonth = new Chart(ctxMonth, {
-            type: 'line',
-            data: {
-                labels: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"],
-                datasets: [{ 
-                    data: [86,114,106,106,107,111,133,100,87,90,86,114,106,106,107,111,133,100,87,90,86,114,106,106,107,111,133,100,87,90,100],
-                    label: "Nhập kho",
-                    borderColor: "#3e95cd",
-                    fill: false
-                }, { 
-                    data: [282,350,411,502,635,809,947,800,875,787,282,350,411,502,635,809,947,800,875,787,282,350,411,502,635,809,947,800,875,787,900],
-                    label: "Xuất kho",
-                    borderColor: "#8e5ea2",
-                    fill: false
-                }, { 
-                    data: [168,170,178,190,203,276,408,500,600,565,168,170,178,190,203,276,408,500,600,565,168,170,178,190,203,276,408,500,600,565,800],
-                    label: "Thanh lý",
-                    borderColor: "#3cba9f",
-                    fill: false
-                }
-                ]
-            },
-            options: {
-                title: {
-                display: true,
-                text: 'Biểu đồ doanh thu tháng (đơn vị triệu VNĐ)'
-                }
-            }
-        });
-
-        var myChartYear = new Chart(ctxYear, {
-            type: 'line',
-            data: {
-                labels: ["tháng 1","tháng 2","tháng 3","tháng 4","tháng 5","tháng 6","tháng 7","tháng 8","tháng 9","tháng 10","tháng 11","tháng 12",],
-                datasets: [{ 
-                    data: [86,114,106,106,107,111,133,106,106,107,111,133],
-                    label: "Nhập kho",
-                    borderColor: "#3e95cd",
-                    fill: false
-                }, { 
-                    data: [282,350,411,502,635,809,947,106,106,107,111,133],
-                    label: "Xuất kho",
-                    borderColor: "#8e5ea2",
-                    fill: false
-                }, { 
-                    data: [168,170,178,190,203,276,408,106,106,107,111,133],
-                    label: "Thanh lý",
-                    borderColor: "#3cba9f",
-                    fill: false
-                }
-                ]
-            },
-            options: {
-                title: {
-                display: true,
-                text: 'Biểu đồ doanh thu năm (đơn vị triệu VNĐ)'
-                }
-            }
-        });
-    </script>
-}
 

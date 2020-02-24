@@ -1,4 +1,4 @@
-﻿USE MWIEDb
+﻿USE MWIE
 
 INSERT INTO GroupDrugs(Name,IsActive) VALUES (N'Thuốc gây mê', 2);
 INSERT INTO GroupDrugs(Name,IsActive) VALUES (N'Thuốc trị đau nhức và chăm sóc giảm nhẹ', 1);

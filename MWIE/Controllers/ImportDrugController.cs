@@ -60,25 +60,17 @@ namespace MWIE.Controllers
             var userProfileId = User.Claims
                 .Where(c => c.Type == "UserProfileId")
                 .Select(c => c.Value).SingleOrDefault();
-            /* if (_userManager.GetUserName(HttpContext.User).Equals("admin@test.com") && userProfileId == null)
-             {
-                 UserProfile userProfileAdmin = new UserProfile()
-                 {
-                     FirstName = "Admin",
-                     LastName = "",
-                     Email = "admin@test.com"
-                 };
 
-                 _userService.Add(userProfileAdmin);
-                 _userService.Save();
+            UserProfile userProfile;
 
-                 var userProfileClaim = new Claim("UserProfileId", userProfileAdmin.Id.ToString());
-                 var user = await _userManager.GetUserAsync(HttpContext.User);
-                 await _userManager.AddClaimAsync(user, userProfileClaim);
-
-                 userProfileId = userProfileAdmin.Id.ToString();
-             }*/
-            UserProfile userProfile = _userService.GetById(Int32.Parse(userProfileId));
+            if (userProfileId != null)
+            {
+                userProfile = _userService.GetById(Int32.Parse(userProfileId));
+            }
+            else
+            {
+                userProfile = _userService.GetById(1);
+            }
 
             return Json(new { data = userProfile });
         }
