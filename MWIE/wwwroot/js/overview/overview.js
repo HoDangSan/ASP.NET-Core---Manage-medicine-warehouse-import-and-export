@@ -10,6 +10,9 @@ var tableReceiptLiquidation = tableReceiptLiquidation || {};
 var ctxWeek = document.getElementById('canvas').getContext('2d');
 var ctxMonth = document.getElementById('canvasMonth').getContext('2d');
 var ctxYear = document.getElementById('canvasYear').getContext('2d');
+var statisticalExportAll = [];
+var statisticalImportAll = [];
+var statisticalLiquidationAll = [];
 
 number.draw = function () {
     $.ajax({
@@ -21,6 +24,8 @@ number.draw = function () {
             var today = new Date();
 
             for (let i = 0; i < data.length; i++) {
+                statisticalExportAll.push(data[i]);
+
                 var temp = new Date(data[i].dateCreate)
                 if (temp.getDate() === today.getDate()
                     && temp.getMonth() === today.getMonth()
@@ -42,6 +47,8 @@ number.draw = function () {
             var today = new Date();
 
             for (let i = 0; i < data.length; i++){
+                statisticalImportAll.push(data[i]);
+
                 var temp = new Date(data[i].dateCreate)
                 if (temp.getDate() === today.getDate()
                     && temp.getMonth() === today.getMonth()
@@ -63,6 +70,8 @@ number.draw = function () {
             var today = new Date();
 
             for (let i = 0; i < data.length; i++) {
+                statisticalLiquidationAll.push(data[i]);
+
                 var temp = new Date(data[i].dateCreate)
                 if (temp.getDate() === today.getDate()
                     && temp.getMonth() === today.getMonth()
@@ -72,8 +81,10 @@ number.draw = function () {
             }
 
             $('#numberLiquidation').html(statisticalLiquidation.length);
+            charts.draw();
         }
     });
+
 }
 
 // xử lý hiển thị những hóa đơn nhập hôm nay
@@ -317,12 +328,57 @@ $('#btn-close-detailLiquidation').on('click', function () {
 });
 
 charts.draw = function () {
+
+    function getArrDataWeek(arr) {
+        var weeks = [];
+
+        Date.prototype.getWeekNumber = function () {
+            var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+            var dayNum = d.getUTCDay() || 7;
+            d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+            var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+            return Math.ceil((((d - yearStart) / 86400000) + 1) / 7)
+        };
+
+        var weekNumberToday = new Date().getWeekNumber();
+
+        for (let i = 0; i < arr.length; i++) {
+            var dateCreate = new Date(arr[i].dateCreate);
+            var weekNumberDateCreate = dateCreate.getWeekNumber();
+            if (weekNumberDateCreate === weekNumberToday) {
+                weeks.push(arr[i]);
+            }
+        }
+
+
+        var data = [];
+
+        for (let i = 0; i < 7; i++) {
+            for (let j = 0; j < weeks.length; j++) {
+                var dateofWeek = new Date(weeks[j].dateCreate);
+                var dateofWeekNumber = dateofWeek.getDay();
+                if (dateofWeekNumber === i) {
+                    data.push(weeks[j].totalPrice);
+                }
+            }
+            if (data[i] == null) {
+                data.push(0);
+            }
+        }
+
+        return data;
+    }
+
+    var dataWeekImport = getArrDataWeek(statisticalImportAll);
+    var dataWeekExport = getArrDataWeek(statisticalExportAll);
+    var dataWeekLiquidation = getArrDataWeek(statisticalLiquidationAll);
+    
     var myChart = new Chart(ctxWeek, {
         type: 'line',
         data: {
-            labels: ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"],
+            labels: ["Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"],
             datasets: [{
-                data: [86, 114, 106, 106, 107, 111, 133],
+                data: dataWeekImport,
                 label: "Nhập kho",
                 borderColor: "#3e95cd",
                 fill: false
@@ -413,7 +469,6 @@ page.init = function () {
     tableReceiptImport.draw();
     tableReceiptExport.draw();
     tableReceiptLiquidation.draw();
-    charts.draw();
 };
 $(document).ready(function () {
     page.init();
