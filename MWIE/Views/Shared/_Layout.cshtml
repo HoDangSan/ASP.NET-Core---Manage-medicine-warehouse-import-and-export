@@ -285,20 +285,26 @@
                                         <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
                                     </a>
                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
-                                        <li>
-                                            <a href="#"><span class="adminpro-icon adminpro-home-admin author-log-ic"></span>Tài khoản</a>
-                                        </li>
-                                        <li id="idUser">
-                                            <a href="ManageUser/Edit/@User.Claims.Where(c => c.Type == "UserProfileId").Select(c => c.Value).SingleOrDefault()"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>Cập nhật thông tin</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><span class="adminpro-icon adminpro-money author-log-ic"></span>Lương</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Cài đặt</a>
-                                        </li>
+                                        @if (SignInManager.IsSignedIn(User))
+                                        {
+                                            if (User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Admin")
+                                            {
+                                                <li>
+                                                    <a href="/Identity/Account/Register"><span class="adminpro-icon adminpro-home-admin author-log-ic"></span>Đăng ký người dùng</a>
+                                                </li>
+                                            }
+                                        }
+                                        @if (SignInManager.IsSignedIn(User))
+                                        {
+                                            if (User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value != "Admin")
+                                            {
+                                                <li id="idUser">
+                                                    <a href="ManageUser/Edit/@User.Claims.Where(c => c.Type == "UserProfileId").Select(c => c.Value).SingleOrDefault()"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>Cập nhật thông tin</a>
+                                                </li>
+                                            }
+                                        }
                                         <li style="color: white; padding-left: 20px">
-                                            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post" >
+                                            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
                                                 <span class="adminpro-icon adminpro-settings author-log-ic"></span>
                                                 <button style="border: none;background: none;border: none;padding: 0px;"> Đăng xuất </button>
                                             </form>

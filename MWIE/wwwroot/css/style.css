@@ -4023,8 +4023,8 @@ ul.breadcome-menu {
 .materialdesign .header-top-menu .navbar-nav>li .dropdown-menu, .materialdesign .header-right-info ul.header-right-menu li .author-message-top, .materialdesign .header-right-info ul.header-right-menu li .notification-author, .materialdesign .header-right-info ul.header-right-menu li .author-log, .materialdesign .header-right-info ul.header-right-menu li .admintab-wrap.menu-setting-wrap.menu-setting-wrap-bg.dropdown-menu{
 	background: linear-gradient(to bottom, #ff9966 0%, #ff66cc 100%);
 }
-.materialdesign .header-right-info .author-message-top:before, .materialdesign .header-right-info .notification-author:before{
-	border-bottom: 10px solid #ff9966;
+.materialdesign .header-right-info .author-message-top:before, .materialdesign .header-right-info .notification-author:before {
+	border-bottom: 10px solid #223a82;
 }
 .materialdesign .header-top-menu .navbar-nav>li .dropdown-menu a:hover, .materialdesign .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:hover, .materialdesign  .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:focus, .materialdesign  .header-drl-controller-btn.btn-info:active:focus, .btn-info:active:hover{
     background: #172054;

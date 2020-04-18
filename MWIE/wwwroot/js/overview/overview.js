@@ -16,6 +16,7 @@ var statisticalLiquidationAll = [];
 
 number.draw = function () {
     $.ajax({
+        async: false,
         url: "/ExportDrug/Get",
         type: "GET",
         dataType: "json",
@@ -39,6 +40,7 @@ number.draw = function () {
     });
 
     $.ajax({
+        async: false,
         url: "/ImportDrug/Get",
         type: "GET",
         dataType: "json",
@@ -62,6 +64,7 @@ number.draw = function () {
     });
 
     $.ajax({
+        async: false,
         url: "/Liquidation/Get",
         type: "GET",
         dataType: "json",
@@ -69,7 +72,7 @@ number.draw = function () {
         success: function (data) {
             var today = new Date();
 
-            for (let i = 0; i < data.length; i++) {
+            for (let i = 0; i < data.length; i++) { 
                 statisticalLiquidationAll.push(data[i]);
 
                 var temp = new Date(data[i].dateCreate)
@@ -327,8 +330,7 @@ $('#btn-close-detailLiquidation').on('click', function () {
     $("#popupDetailsLiquidation").hide();
 });
 
-charts.draw = function () {
-
+charts.draw = function () { 
     function getArrDataWeek(arr) {
         var weeks = [];
 
@@ -350,18 +352,70 @@ charts.draw = function () {
             }
         }
 
-
         var data = [];
 
         for (let i = 0; i < 7; i++) {
             for (let j = 0; j < weeks.length; j++) {
                 var dateofWeek = new Date(weeks[j].dateCreate);
                 var dateofWeekNumber = dateofWeek.getDay();
-                if (dateofWeekNumber === i) {
+                if (dateofWeekNumber === i && data[i] == null) {
                     data.push(weeks[j].totalPrice);
+                }
+                else if (dateofWeekNumber === i && data[i] != null) {
+                    data[i] += weeks[j].totalPrice;
                 }
             }
             if (data[i] == null) {
+                data.push(0);
+            }
+        }
+
+        return data;
+    }
+     
+    function getArrDataMonth(arr) {
+        var data = [];
+        
+        // for very data flow date in month
+        for (var j = 1; j <= 31; j++) {
+            for (let i = 0; i < arr.length; i++) {
+                var dateCreate = new Date(arr[i].dateCreate);
+                var today = new Date();
+                if (dateCreate.getDate() == j && dateCreate.getMonth() == today.getMonth() && dateCreate.getFullYear() == today.getFullYear()) {
+                    if (data[j] == null) {
+                        data.push(arr[i].totalPrice);
+                    } else {
+                        data[j] += arr[i].totalPrice;
+                    }
+                }
+            }
+
+            if (data[j] == null) {
+                data.push(0);
+            }
+        }
+
+        return data;
+    }
+
+    function getArrDataYear(arr) {
+        var data = [];
+
+        // for very data flow date in year
+        for (var j = 1; j <= 12; j++) {
+            for (let i = 0; i < arr.length; i++) {
+                var dateCreate = new Date(arr[i].dateCreate);
+                var today = new Date();
+                if ((dateCreate.getMonth() + 1) == j && dateCreate.getFullYear() == today.getFullYear()) {
+                    if (data[j] == null) {
+                        data.push(arr[i].totalPrice);
+                    } else {
+                        data[j] += arr[i].totalPrice;
+                    }
+                }
+            }
+
+            if (data[j] == null) {
                 data.push(0);
             }
         }
@@ -372,7 +426,15 @@ charts.draw = function () {
     var dataWeekImport = getArrDataWeek(statisticalImportAll);
     var dataWeekExport = getArrDataWeek(statisticalExportAll);
     var dataWeekLiquidation = getArrDataWeek(statisticalLiquidationAll);
-    
+
+    var dataMonthImport = getArrDataMonth(statisticalImportAll);
+    var dataMonthExport = getArrDataMonth(statisticalExportAll);
+    var dataMonthLiquidation = getArrDataMonth(statisticalLiquidationAll);
+
+    var dataYearImport = getArrDataYear(statisticalImportAll);
+    var dataYearExport = getArrDataYear(statisticalExportAll);
+    var dataYearLiquidation = getArrDataYear(statisticalLiquidationAll);
+
     var myChart = new Chart(ctxWeek, {
         type: 'line',
         data: {
@@ -383,12 +445,12 @@ charts.draw = function () {
                 borderColor: "#3e95cd",
                 fill: false
             }, {
-                data: [282, 350, 411, 502, 635, 809, 947],
+                data: dataWeekExport,
                 label: "Xuất kho",
                 borderColor: "#8e5ea2",
                 fill: false
             }, {
-                data: [168, 170, 178, 190, 203, 276, 408],
+                data: dataWeekLiquidation,
                 label: "Thanh lý",
                 borderColor: "#3cba9f",
                 fill: false
@@ -398,27 +460,29 @@ charts.draw = function () {
         options: {
             title: {
                 display: true,
-                text: 'Biểu đồ doanh thu tuần (đơn vị triệu VNĐ)'
+                text: 'Biểu đồ doanh thu tuần (đơn vị VNĐ)'
             }
         }
     });
+
+   
 
     var myChartMonth = new Chart(ctxMonth, {
         type: 'line',
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"],
             datasets: [{
-                data: [86, 114, 106, 106, 107, 111, 133, 100, 87, 90, 86, 114, 106, 106, 107, 111, 133, 100, 87, 90, 86, 114, 106, 106, 107, 111, 133, 100, 87, 90, 100],
+                data: dataMonthImport,
                 label: "Nhập kho",
                 borderColor: "#3e95cd",
                 fill: false
             }, {
-                data: [282, 350, 411, 502, 635, 809, 947, 800, 875, 787, 282, 350, 411, 502, 635, 809, 947, 800, 875, 787, 282, 350, 411, 502, 635, 809, 947, 800, 875, 787, 900],
+                data: dataMonthExport,
                 label: "Xuất kho",
                 borderColor: "#8e5ea2",
                 fill: false
             }, {
-                data: [168, 170, 178, 190, 203, 276, 408, 500, 600, 565, 168, 170, 178, 190, 203, 276, 408, 500, 600, 565, 168, 170, 178, 190, 203, 276, 408, 500, 600, 565, 800],
+                data: dataMonthLiquidation,
                 label: "Thanh lý",
                 borderColor: "#3cba9f",
                 fill: false
@@ -428,27 +492,29 @@ charts.draw = function () {
         options: {
             title: {
                 display: true,
-                text: 'Biểu đồ doanh thu tháng (đơn vị triệu VNĐ)'
+                text: 'Biểu đồ doanh thu tháng (đơn vị VNĐ)'
             }
         }
     });
+
+   
 
     var myChartYear = new Chart(ctxYear, {
         type: 'line',
         data: {
             labels: ["tháng 1", "tháng 2", "tháng 3", "tháng 4", "tháng 5", "tháng 6", "tháng 7", "tháng 8", "tháng 9", "tháng 10", "tháng 11", "tháng 12",],
             datasets: [{
-                data: [86, 114, 106, 106, 107, 111, 133, 106, 106, 107, 111, 133],
+                data: dataYearImport,
                 label: "Nhập kho",
                 borderColor: "#3e95cd",
                 fill: false
             }, {
-                data: [282, 350, 411, 502, 635, 809, 947, 106, 106, 107, 111, 133],
+                data: dataYearExport,
                 label: "Xuất kho",
                 borderColor: "#8e5ea2",
                 fill: false
             }, {
-                data: [168, 170, 178, 190, 203, 276, 408, 106, 106, 107, 111, 133],
+                data: dataYearLiquidation,
                 label: "Thanh lý",
                 borderColor: "#3cba9f",
                 fill: false
@@ -458,7 +524,7 @@ charts.draw = function () {
         options: {
             title: {
                 display: true,
-                text: 'Biểu đồ doanh thu năm (đơn vị triệu VNĐ)'
+                text: 'Biểu đồ doanh thu năm (đơn vị VNĐ)'
             }
         }
     });
